@@ -2,8 +2,7 @@
 class MessageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
-  # storage :fog
-  storage :file
+  storage :fog
   
   process :auto_orient # this should go before all other "process" steps
 
