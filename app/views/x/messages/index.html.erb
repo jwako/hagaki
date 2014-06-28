@@ -1,0 +1,29 @@
+ <div class="row">
+  <div class="col-md-12">
+    <div class="box">
+    <div class="box-header">
+    <h3 class="box-title">メッセージ一覧</h3>
+    </div><!-- /.box-header -->
+    <div class="box-body">
+      <table class="table table-striped">
+      <tr>
+        <th class="col-lg-1 text-center"></th>
+        <th class="col-lg-6 text-center">メッセージ</th>
+        <th class="col-lg-2 text-center"></th>
+      </tr>
+      <% @messages.each do |message| %>
+      <% if message.users.blank? %>
+      <tr>
+        <td class="text-center"><%= message.id %></td>
+        <td class="text-center"><%= image_tag(message.message.url, class: "img-responsive", alt: "message") %></td>
+        <td class="text-center"><%= link_to "宛先を紐付ける", edit_x_message_path(message), class: "btn btn-lg btn-primary" %></td>
+      </tr>
+      <% end %>
+      <% end %>
+      </table>
+    </div><!-- /.box-body -->
+    <div class="box-footer clearfix">
+    </div>
+    </div>
+  </div>
+</div>

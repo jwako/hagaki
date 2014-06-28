@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 gem 'bower-rails', '~> 0.7.3'
 gem 'devise'
 gem "ransack", github: "activerecord-hackery/ransack", branch: "rails-4.1"
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 # RSpec
 group :test, :development do

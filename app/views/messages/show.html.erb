@@ -1,0 +1,16 @@
+ <div class="row">
+  <div class="col-md-12">
+    <div class="box">
+    <div class="box-header">
+    <h3 class="box-title">メッセージ</h3>
+    </div><!-- /.box-header -->
+    <div class="box-body">
+	  	<%= image_tag(@message.message.url, class: "img-responsive text-center", alt: "message") %>
+    </div><!-- /.box-body -->
+    <div class="box-footer clearfix">
+	  	<%= link_to "このメッセージに返信する", new_x_notification_path, class: "btn btn-lg btn-block btn-primary" %>
+	  	<div class="clearfix"></div>
+    </div>
+    </div>
+  </div>
+</div>

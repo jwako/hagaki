@@ -1,0 +1,8 @@
+development: &default
+    bucket: hagaki-dev
+
+test:
+    <<: *default
+
+production:
+    bucket: hagaki-prd
