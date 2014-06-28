@@ -30,7 +30,7 @@ class X::MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:message)
+    params.require(:message).permit(:message, :address)
   end
 
 end

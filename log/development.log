@@ -12998,3 +12998,779 @@ Processing by MessagesController#new as HTML
   Rendered common/_error.html.erb (0.4ms)
   Rendered messages/new.html.erb within layouts/top (2.5ms)
 Completed 200 OK in 18ms (Views: 13.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/x/messages" for 127.0.0.1 at 2014-06-29 07:05:52 +0900
+Processing by X::MessagesController#index as HTML
+  [1m[35mAdmin Load (0.7ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+Completed 401 Unauthorized in 13ms
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2014-06-29 07:05:52 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/top (3.4ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in" for 127.0.0.1 at 2014-06-29 07:06:00 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1cRI4z6ymJ/yN2n3kgXjsG5TRTq+12IScMKbrABsn18=", "admin"=>{"email"=>"s1@namie.jp", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mAdmin Load (0.5ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."email" = 's1@namie.jp'  ORDER BY "admins"."id" ASC LIMIT 1[0m
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1cRI4z6ymJ/yN2n3kgXjsG5TRTq+12IScMKbrABsn18=", "admin"=>{"email"=>"s1@namie.jp", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/top (2.6ms)
+Completed 200 OK in 84ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at 2014-06-29 07:06:13 +0900
+Processing by MessagesController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered common/_error.html.erb (0.1ms)
+  Rendered messages/new.html.erb within layouts/top (2.8ms)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at 2014-06-29 07:06:13 +0900
+Processing by MessagesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered common/_error.html.erb (0.0ms)
+  Rendered messages/new.html.erb within layouts/top (1.3ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at 2014-06-29 07:06:20 +0900
+Processing by MessagesController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered common/_error.html.erb (0.1ms)
+  Rendered messages/new.html.erb within layouts/top (1.3ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at 2014-06-29 07:06:21 +0900
+Processing by MessagesController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered common/_error.html.erb (0.0ms)
+  Rendered messages/new.html.erb within layouts/top (1.4ms)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at 2014-06-29 07:08:03 +0900
+Processing by MessagesController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered common/_error.html.erb (0.1ms)
+  Rendered messages/new.html.erb within layouts/top (2.3ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/admins/sign_in" for 127.0.0.1 at 2014-06-29 07:12:06 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1cRI4z6ymJ/yN2n3kgXjsG5TRTq+12IScMKbrABsn18=", "admin"=>{"email"=>"junwako@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."email" = 'junwako@gmail.com'  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "admins" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "admins"."id" = 1[0m  [["current_sign_in_at", "2014-06-29 07:12:07.076298"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-06-29 07:12:07.076298"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-06-29 07:12:07.077539"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/x/home
+Completed 302 Found in 85ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/x/home" for 127.0.0.1 at 2014-06-29 07:12:07 +0900
+Processing by X::HomeController#show as HTML
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  Rendered x/home/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/x/messages" for 127.0.0.1 at 2014-06-29 07:12:09 +0900
+Processing by X::MessagesController#index as HTML
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mMessage Load (0.4ms)[0m  [1mSELECT "messages".* FROM "messages"  WHERE (message IS NOT NULL)  ORDER BY id DESC[0m
+  Rendered x/messages/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/x/users" for 127.0.0.1 at 2014-06-29 07:12:11 +0900
+Processing by X::UsersController#index as HTML
+  [1m[35mAdmin Load (0.5ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT DISTINCT "users".* FROM "users"   ORDER BY "users"."id" ASC[0m
+  Rendered x/users/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 23ms (Views: 18.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at 2014-06-29 07:14:15 +0900
+Processing by MessagesController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered common/_error.html.erb (0.1ms)
+  Rendered messages/new.html.erb within layouts/top (2.3ms)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2014-06-29 07:14:43 +0900
+Processing by HomeController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.5ms)[0m  SELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC  [["user_id", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (text IS NOT NULL)  ORDER BY id DESC[0m  [["user_id", 1]]
+  Rendered home/show.html.erb within layouts/top (2.0ms)
+Completed 200 OK in 16ms (Views: 10.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2014-06-29 07:48:07 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError - 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+:
+  activerecord (4.1.0) lib/active_record/migration.rb:389:in `check_pending!'
+  activerecord (4.1.0) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70198592599380/variables" for 127.0.0.1 at 2014-06-29 07:48:07 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnAddressToMessages (20140628224701)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "messages" ADD COLUMN "address" character varying(255)[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140628224701"]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/home" for 127.0.0.1 at 2014-06-29 07:48:36 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#show as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mMessage Load (1.0ms)[0m  [1mSELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC[0m  [["user_id", 1]]
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (text IS NOT NULL)  ORDER BY id DESC  [["user_id", 1]]
+  Rendered home/show.html.erb within layouts/top (9.0ms)
+Completed 200 OK in 335ms (Views: 181.7ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at 2014-06-29 07:48:42 +0900
+Processing by MessagesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered common/_error.html.erb (3.0ms)
+  Rendered messages/new.html.erb within layouts/top (123.8ms)
+Completed 200 OK in 139ms (Views: 135.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2014-06-29 07:48:53 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KNM4zn1I0H2CO5DoIH6pjgollfK51U26EoNUZ5jcfpY=", "message"=>{"address"=>#<ActionDispatch::Http::UploadedFile:0x007fedb38525e8 @tempfile=#<Tempfile:/var/folders/dh/5rrpwh3s39j82nnsrv9fgbfm0000gp/T/RackMultipart20140629-41020-1osdycv>, @original_filename="image (1).jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"message[address]\"; filename=\"image (1).jpeg\"\r\nContent-Type: image/jpeg\r\n">, "message"=>#<ActionDispatch::Http::UploadedFile:0x007fedb3851df0 @tempfile=#<Tempfile:/var/folders/dh/5rrpwh3s39j82nnsrv9fgbfm0000gp/T/RackMultipart20140629-41020-g31lf5>, @original_filename="image (1).jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"message[message]\"; filename=\"image (1).jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"送信"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Unpermitted parameters: address
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "messages" ("created_at", "message", "owner_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 07:48:53.796958"], ["message", "5231e38b-827f-4a6f-a15b-b0a545a070e0.jpeg"], ["owner_id", 1], ["updated_at", "2014-06-29 07:48:53.796958"]]
+  [1m[36m (2.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 3508ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2014-06-29 07:48:57 +0900
+Processing by HomeController#show as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mMessage Load (0.8ms)[0m  [1mSELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC[0m  [["user_id", 1]]
+  [1m[35mMessage Load (0.4ms)[0m  SELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (text IS NOT NULL)  ORDER BY id DESC  [["user_id", 1]]
+  Rendered home/show.html.erb within layouts/top (3.1ms)
+Completed 200 OK in 15ms (Views: 9.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/x/messages" for 127.0.0.1 at 2014-06-29 07:49:02 +0900
+Processing by X::MessagesController#index as HTML
+  [1m[36mAdmin Load (1.2ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.4ms)[0m  SELECT "messages".* FROM "messages"  WHERE (message IS NOT NULL)  ORDER BY id DESC
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "senders" ON "users"."id" = "senders"."user_id" WHERE "senders"."message_id" = $1[0m  [["message_id", 1]]
+  Rendered x/messages/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 40ms (Views: 21.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/x/messages/1/edit" for 127.0.0.1 at 2014-06-29 07:51:35 +0900
+Processing by X::MessagesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT  "messages".* FROM "messages"  WHERE "messages"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (1.6ms)[0m  SELECT DISTINCT "users".* FROM "users"   ORDER BY "users"."id" ASC
+  Rendered x/messages/edit.html.erb within layouts/application (151.7ms)
+Completed 200 OK in 190ms (Views: 157.9ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/x/messages/1/edit" for 127.0.0.1 at 2014-06-29 07:51:38 +0900
+Processing by X::MessagesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  "messages".* FROM "messages"  WHERE "messages"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT DISTINCT "users".* FROM "users"   ORDER BY "users"."id" ASC[0m
+  Rendered x/messages/edit.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 29ms (Views: 25.2ms | ActiveRecord: 1.6ms)
+  [1m[36m (118.1ms)[0m  [1mDROP DATABASE IF EXISTS "hagaki_development"[0m
+  [1m[35m (117.1ms)[0m  DROP DATABASE IF EXISTS "hagaki_test"
+  [1m[36m (265.3ms)[0m  [1mCREATE DATABASE "hagaki_development" ENCODING = 'unicode'[0m
+  [1m[35m (340.8ms)[0m  CREATE DATABASE "hagaki_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.7ms)[0m  CREATE TABLE "admins" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins" USING btree ("email")[0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins" USING btree ("reset_password_token")
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "messages" ("id" serial primary key, "message" character varying(255), "created_at" timestamp, "updated_at" timestamp, "text" text, "owner_id" integer, "reply_to" integer, "address" character varying(255)) [0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "senders" ("id" serial primary key, "message_id" integer, "user_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX  "index_senders_on_message_id" ON "senders" USING btree ("message_id")[0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX  "index_senders_on_user_id" ON "senders" USING btree ("user_id")
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "name" character varying(255), "zipcode" character varying(255), "address" character varying(255), "old_address" character varying(255), "group" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140628224701')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140628044250')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140628073453')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140628080705')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140628080818')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140628083752')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140628104742')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140628105431')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140628115810')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAdmin Exists (0.8ms)[0m  SELECT  1 AS one FROM "admins"  WHERE "admins"."email" = 'junwako@gmail.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "admins" ("created_at", "email", "encrypted_password", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 07:52:39.027135"], ["email", "junwako@gmail.com"], ["encrypted_password", "$2a$10$67Q27JVy77681kO6rlqc3.qyVipXy/oqh10wf6JznVoF6BjTcW1gW"], ["updated_at", "2014-06-29 07:52:39.027135"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 's1@namie.jp' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["address", "福島県双葉郡浪江町立野 1-1"], ["created_at", "2014-06-29 07:52:39.122524"], ["email", "s1@namie.jp"], ["encrypted_password", "$2a$10$NlJz5zKkRMzJOvf5S7JqMuKXFKSOx3jIB1J54dzx1JP3.7jHI/41O"], ["group", "立野"], ["name", "佐藤 一郎"], ["old_address", "浪江町立野 100-1"], ["updated_at", "2014-06-29 07:52:39.122524"], ["zipcode", "9791751"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 's1@namie.jp' LIMIT 1
+  [1m[36m (1.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's2@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町谷津田 1-2"], ["created_at", "2014-06-29 07:52:39.590414"], ["email", "s2@namie.jp"], ["encrypted_password", "$2a$10$PbyS6YZjATkLK3jwlOG2R.Johb48PU3N0ugUPuy.3OmimG14oBohC"], ["group", "谷津田"], ["name", "田中 ミキコ"], ["old_address", "浪江町谷津田 100-2"], ["updated_at", "2014-06-29 07:52:39.590414"], ["zipcode", "9791751"]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's2@namie.jp' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 's3@namie.jp' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["address", "福島県双葉郡浪江町谷津田 1-2"], ["created_at", "2014-06-29 07:52:39.749853"], ["email", "s3@namie.jp"], ["encrypted_password", "$2a$10$GjF6sCmSRr89BHuLelUXAOR5Lrgu1Clcd8qsXVLJ6ioWXxBgPaQA6"], ["group", "谷津田"], ["name", "田中 幸雄"], ["old_address", "浪江町谷津田 100-2"], ["updated_at", "2014-06-29 07:52:39.749853"], ["zipcode", "9791751"]]
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 's3@namie.jp' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's4@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町室原 1-4"], ["created_at", "2014-06-29 07:52:39.906351"], ["email", "s4@namie.jp"], ["encrypted_password", "$2a$10$D1ruiZXFq/PIRb5nyMiX.uJICS3nxL4iYzwdrwVn5QdtL9DP8UHdW"], ["group", "室原"], ["name", "吉川 亀夫"], ["old_address", "浪江町室原 100-4"], ["updated_at", "2014-06-29 07:52:39.906351"], ["zipcode", "9791751"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's5@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町津島 1-5"], ["created_at", "2014-06-29 07:52:39.987204"], ["email", "s5@namie.jp"], ["encrypted_password", "$2a$10$fEoLO/bS6czhG0pMBEoqxecV6RZ.1DVO0vn3N2A3wQY0Z4IXQ4axS"], ["group", "津島"], ["name", "稲辺 三喜夫"], ["old_address", "浪江町津島 100-5"], ["updated_at", "2014-06-29 07:52:39.987204"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's6@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町立野 1-6"], ["created_at", "2014-06-29 07:52:40.063728"], ["email", "s6@namie.jp"], ["encrypted_password", "$2a$10$WmmGTyPsAIrSTIU2/mGwE..LEJlWNGZcvY0pY0b9iFFppEQfFrclu"], ["group", "立野"], ["name", "鶴川 宏明"], ["old_address", "浪江町立野 100-6"], ["updated_at", "2014-06-29 07:52:40.063728"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's7@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町牛渡 1-7"], ["created_at", "2014-06-29 07:52:40.148058"], ["email", "s7@namie.jp"], ["encrypted_password", "$2a$10$wkzotpTDapKeKuTK9/8H9e/mkAgi3fGEP0uw1LmPsqXXMW0yvVA8C"], ["group", "牛渡"], ["name", "根本 亥太郎"], ["old_address", "浪江町牛渡 100-7"], ["updated_at", "2014-06-29 07:52:40.148058"], ["zipcode", "9791751"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's8@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町中浜 1-8"], ["created_at", "2014-06-29 07:52:40.228030"], ["email", "s8@namie.jp"], ["encrypted_password", "$2a$10$n8j1.agDSUz8THbvecjyAuQ8qcjsU0WcogMfaa5XrzgYjaV12EY0a"], ["group", "中浜"], ["name", "近内 蘭奢"], ["old_address", "浪江町中浜 100-8"], ["updated_at", "2014-06-29 07:52:40.228030"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's9@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町牛渡 1-9"], ["created_at", "2014-06-29 07:52:40.307529"], ["email", "s9@namie.jp"], ["encrypted_password", "$2a$10$bKgXGmhrmkzz5R6mzUpVoePViB8xv4ndhDf7/O8S2Vr4v4CJB1zWa"], ["group", "牛渡"], ["name", "傅 慶喜"], ["old_address", "浪江町牛渡 100-9"], ["updated_at", "2014-06-29 07:52:40.307529"], ["zipcode", "9791751"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's10@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町津島 1-10"], ["created_at", "2014-06-29 07:52:40.389707"], ["email", "s10@namie.jp"], ["encrypted_password", "$2a$10$fcIAdTVj7EM/0lOr5VZXOOFmi7EebRofX1CwfXGpeUWZlY3vEncFy"], ["group", "津島"], ["name", "渡部 喜和"], ["old_address", "浪江町津島 100-10"], ["updated_at", "2014-06-29 07:52:40.389707"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's11@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "京都府XXXXX市 1-2-11"], ["created_at", "2014-06-29 07:52:40.472867"], ["email", "s11@namie.jp"], ["encrypted_password", "$2a$10$ygLP/Fxu03qRTkPqJmXg7u5MQKh6xi68wJUkb0ahAqtjBJt93as6e"], ["group", "加倉"], ["name", "小又 久幸"], ["old_address", "浪江町加倉 100-11"], ["updated_at", "2014-06-29 07:52:40.472867"], ["zipcode", "9791751"]]
+  [1m[36m (11.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's12@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町中浜 1-12"], ["created_at", "2014-06-29 07:52:40.565593"], ["email", "s12@namie.jp"], ["encrypted_password", "$2a$10$w4SklJ2Thax6zS8CzuxgyuiaYqxOIRHINW86IMpAu1rwSCywTE5xq"], ["group", "中浜"], ["name", "中谷 康広"], ["old_address", "浪江町中浜 100-12"], ["updated_at", "2014-06-29 07:52:40.565593"], ["zipcode", "9791751"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's13@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町下津島 1-13"], ["created_at", "2014-06-29 07:52:40.647435"], ["email", "s13@namie.jp"], ["encrypted_password", "$2a$10$NBtnZfhcu0cerIfBllnUqOOEYi8QrHOarnV7xdDkWFRK.h2HB/FBa"], ["group", "下津島"], ["name", "府金 ヨリ"], ["old_address", "浪江町下津島 100-13"], ["updated_at", "2014-06-29 07:52:40.647435"], ["zipcode", "9791751"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's14@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町谷津田 1-14"], ["created_at", "2014-06-29 07:52:40.724957"], ["email", "s14@namie.jp"], ["encrypted_password", "$2a$10$WK14QKCaT27UOWn2RN/vqetiMhwt3dWHpGITji8RccIc9b2iQPfMu"], ["group", "谷津田"], ["name", "トムソン 幸夫"], ["old_address", "浪江町谷津田 100-14"], ["updated_at", "2014-06-29 07:52:40.724957"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's15@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町請戸 1-15"], ["created_at", "2014-06-29 07:52:40.803068"], ["email", "s15@namie.jp"], ["encrypted_password", "$2a$10$kKDVZe3ecH/tZyBiGZueK.FoTTbQilkVSDGvUgMgdxuR5cNqT8SYK"], ["group", "請戸"], ["name", "影沢 勇紀"], ["old_address", "浪江町請戸 100-15"], ["updated_at", "2014-06-29 07:52:40.803068"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's16@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "高知県XXXXX市 1-2-16"], ["created_at", "2014-06-29 07:52:40.884520"], ["email", "s16@namie.jp"], ["encrypted_password", "$2a$10$Iqbw8FcEsWm5u4KvpqecfePFtkfbiD3wDrG6UHq1YtEysSQuOdfWe"], ["group", "加倉"], ["name", "岩本 伸哉"], ["old_address", "浪江町加倉 100-16"], ["updated_at", "2014-06-29 07:52:40.884520"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's17@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町請戸 1-17"], ["created_at", "2014-06-29 07:52:40.961363"], ["email", "s17@namie.jp"], ["encrypted_password", "$2a$10$ZkLWj8x7MhQPoDGyB8sOj.Dl9t.ydWKdx/odas2KUFt.AY..e4qve"], ["group", "請戸"], ["name", "井野口 未麻"], ["old_address", "浪江町請戸 100-17"], ["updated_at", "2014-06-29 07:52:40.961363"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's18@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町川房 1-18"], ["created_at", "2014-06-29 07:52:41.039335"], ["email", "s18@namie.jp"], ["encrypted_password", "$2a$10$rNj/ROAcaZ2iH0mp6MqHk.SuQmWdA0bGhEcfUxKmj/85CLpMMIDey"], ["group", "川房"], ["name", "二川 浜人"], ["old_address", "浪江町川房 100-18"], ["updated_at", "2014-06-29 07:52:41.039335"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's19@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "三重県XXXXX市 1-2-19"], ["created_at", "2014-06-29 07:52:41.118708"], ["email", "s19@namie.jp"], ["encrypted_password", "$2a$10$5bwAXdphvFL.AvPwLIWvUe2elsfv/W6oB7ghdaDItSaF3XGtH9Bm2"], ["group", "小野田"], ["name", "舘岡 バーガー"], ["old_address", "浪江町小野田 100-19"], ["updated_at", "2014-06-29 07:52:41.118708"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's20@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町棚塩 1-20"], ["created_at", "2014-06-29 07:52:41.198650"], ["email", "s20@namie.jp"], ["encrypted_password", "$2a$10$YLHvi5wAa400UuUROXEq3OWjyuLYEn2jLro.I/d7UkTTE.1T1u2yi"], ["group", "棚塩"], ["name", "ダイクストラ 琢朗"], ["old_address", "浪江町棚塩 100-20"], ["updated_at", "2014-06-29 07:52:41.198650"], ["zipcode", "9791751"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's21@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町下津島 1-21"], ["created_at", "2014-06-29 07:52:41.277506"], ["email", "s21@namie.jp"], ["encrypted_password", "$2a$10$wNqAzneNSEpRMZXcEiDea.DJrO/Efsz6BQKvUGhL2iuZwoZhEAC9C"], ["group", "下津島"], ["name", "大北 恭生"], ["old_address", "浪江町下津島 100-21"], ["updated_at", "2014-06-29 07:52:41.277506"], ["zipcode", "9791751"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's22@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "岡山県XXXXX市 1-2-22"], ["created_at", "2014-06-29 07:52:41.356991"], ["email", "s22@namie.jp"], ["encrypted_password", "$2a$10$Gq7mwTNXfIQeKusP87Qmae.Rr1813SifIcIiAURXWh6mbGNR3BEg."], ["group", "昼曽根"], ["name", "瀬崎 其磧"], ["old_address", "浪江町昼曽根 100-22"], ["updated_at", "2014-06-29 07:52:41.356991"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's23@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "沖縄県XXXXX市 1-2-23"], ["created_at", "2014-06-29 07:52:41.435825"], ["email", "s23@namie.jp"], ["encrypted_password", "$2a$10$jveAFbkhZzI0Y3iwE158YeLiQ6cOVq4h1mc191HcHcf.yUMa0Uuv2"], ["group", "末森"], ["name", "垣谷 永常"], ["old_address", "浪江町末森 100-23"], ["updated_at", "2014-06-29 07:52:41.435825"], ["zipcode", "9791751"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's24@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "熊本県XXXXX市 1-2-24"], ["created_at", "2014-06-29 07:52:41.516330"], ["email", "s24@namie.jp"], ["encrypted_password", "$2a$10$JW5nRffcnYGK0SAcsoyKMOzPEXZCHN3ResDObLXnQ7eXbw14U1zPS"], ["name", "伊馬 浩成"], ["old_address", "浪江町 100-24"], ["updated_at", "2014-06-29 07:52:41.516330"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's25@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町西台 1-25"], ["created_at", "2014-06-29 07:52:41.596112"], ["email", "s25@namie.jp"], ["encrypted_password", "$2a$10$Dis9IDhFVAXHbk3N4GVD.eNXUvAvN0oYzy60c/cPFZIsvZ2Shrb.."], ["group", "西台"], ["name", "秦 秀樹"], ["old_address", "浪江町西台 100-25"], ["updated_at", "2014-06-29 07:52:41.596112"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's26@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "兵庫県XXXXX市 1-2-26"], ["created_at", "2014-06-29 07:52:41.673723"], ["email", "s26@namie.jp"], ["encrypted_password", "$2a$10$GL9S/8Tu386.T5v8OzhBquSRjW541OLounfZhY.2rXvPiNESBj3UW"], ["group", "昼曽根"], ["name", "オーエン 延江"], ["old_address", "浪江町昼曽根 100-26"], ["updated_at", "2014-06-29 07:52:41.673723"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's27@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町北幾世橋 1-27"], ["created_at", "2014-06-29 07:52:41.756582"], ["email", "s27@namie.jp"], ["encrypted_password", "$2a$10$/KBm3z8k3wfUDrNWdYA4re3JhHHy7Lr6/5k4p3fxhYMgqMT3R/JKi"], ["group", "北幾世橋"], ["name", "上島 敏久"], ["old_address", "浪江町北幾世橋 100-27"], ["updated_at", "2014-06-29 07:52:41.756582"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's28@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "佐賀県XXXXX市 1-2-28"], ["created_at", "2014-06-29 07:52:41.841036"], ["email", "s28@namie.jp"], ["encrypted_password", "$2a$10$IiO1ybmhj5iaQS6oY.h4ZunfT5hJKKpmpVrPdUAB2i7Q4OZlN0ZfW"], ["group", "小野田"], ["name", "三本 宗翰"], ["old_address", "浪江町小野田 100-28"], ["updated_at", "2014-06-29 07:52:41.841036"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's29@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "長野県XXXXX市 1-2-29"], ["created_at", "2014-06-29 07:52:41.919173"], ["email", "s29@namie.jp"], ["encrypted_password", "$2a$10$1/RIb5Vf80dGkrwd1FU.PORxySzgruwKASgJZxkY7sb80MjWZ2n0K"], ["group", "藤橋"], ["name", "押野 かまち"], ["old_address", "浪江町藤橋 100-29"], ["updated_at", "2014-06-29 07:52:41.919173"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's30@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "佐賀県XXXXX市 1-2-30"], ["created_at", "2014-06-29 07:52:41.995356"], ["email", "s30@namie.jp"], ["encrypted_password", "$2a$10$aS9fgLYBgKqDqMF2ZC0tued1QZfPVwydRqwLB3BjN8OqcThkYLfxu"], ["group", "下津島"], ["name", "猪俣 篠"], ["old_address", "浪江町下津島 100-30"], ["updated_at", "2014-06-29 07:52:41.995356"], ["zipcode", "9791751"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's31@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "和歌山県XXXXX市 1-2-31"], ["created_at", "2014-06-29 07:52:42.076522"], ["email", "s31@namie.jp"], ["encrypted_password", "$2a$10$SxyXEHFnxLNtFIj9IFi4/ulbypaOVaNrWIfjOp9TcQJsuRu033kpS"], ["group", "棚塩"], ["name", "大谷田 功子"], ["old_address", "浪江町棚塩 100-31"], ["updated_at", "2014-06-29 07:52:42.076522"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's32@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町井手 1-32"], ["created_at", "2014-06-29 07:52:42.155478"], ["email", "s32@namie.jp"], ["encrypted_password", "$2a$10$ozBd.6beaN22LluwlM381eyuW6bNg049.ZPBjrKYOLoqUyC3tj6fK"], ["group", "井手"], ["name", "津秋 知大"], ["old_address", "浪江町井手 100-32"], ["updated_at", "2014-06-29 07:52:42.155478"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's33@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町権現堂 1-33"], ["created_at", "2014-06-29 07:52:42.233748"], ["email", "s33@namie.jp"], ["encrypted_password", "$2a$10$Q3jIbifJ41tCg37gsX6X1uXbs/Z1si1tnKv/dX.2dStl.vjZepwRq"], ["group", "権現堂"], ["name", "黒氏 ベアテ"], ["old_address", "浪江町権現堂 100-33"], ["updated_at", "2014-06-29 07:52:42.233748"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's34@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町立野 1-34"], ["created_at", "2014-06-29 07:52:42.314978"], ["email", "s34@namie.jp"], ["encrypted_password", "$2a$10$IsGDWj4unDpcRbR6Gfdwru5XPSH8MWGYNR94puFExT/v62yrMXp42"], ["group", "立野"], ["name", "竹田 権兵衛"], ["old_address", "浪江町立野 100-34"], ["updated_at", "2014-06-29 07:52:42.314978"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's35@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "青森県XXXXX市 1-2-35"], ["created_at", "2014-06-29 07:52:42.395349"], ["email", "s35@namie.jp"], ["encrypted_password", "$2a$10$maLvNcjgI5fgvXxnzEZajOVMz2wMz3LQoyrruRrczSsPShXNl.XwC"], ["name", "東川 折蘆"], ["old_address", "浪江町 100-35"], ["updated_at", "2014-06-29 07:52:42.395349"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's36@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町下津島 1-36"], ["created_at", "2014-06-29 07:52:42.474622"], ["email", "s36@namie.jp"], ["encrypted_password", "$2a$10$RxvRv.c5QVe0.rPX.884veuYZTULkQhvd0fszqhOSyW54Ats81v5."], ["group", "下津島"], ["name", "豊頃 寛一"], ["old_address", "浪江町下津島 100-36"], ["updated_at", "2014-06-29 07:52:42.474622"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's37@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "岩手県XXXXX市 1-2-37"], ["created_at", "2014-06-29 07:52:42.552978"], ["email", "s37@namie.jp"], ["encrypted_password", "$2a$10$.r4M8L.ZlWs4YqUS4zSCq.tHQSFF2vXuK9JD4NwIZYCzo7lVGYH32"], ["group", "酒田"], ["name", "脇村 モモ"], ["old_address", "浪江町酒田 100-37"], ["updated_at", "2014-06-29 07:52:42.552978"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's38@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町室原 1-38"], ["created_at", "2014-06-29 07:52:42.629491"], ["email", "s38@namie.jp"], ["encrypted_password", "$2a$10$9k/2hAx/3.L92jDXtGw3/.SnTtdcJkuQNHY/J4RMfwMeYC4POpNIC"], ["group", "室原"], ["name", "上部 知紀"], ["old_address", "浪江町室原 100-38"], ["updated_at", "2014-06-29 07:52:42.629491"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's39@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "群馬県XXXXX市 1-2-39"], ["created_at", "2014-06-29 07:52:42.707733"], ["email", "s39@namie.jp"], ["encrypted_password", "$2a$10$k.3s3a7kJE9sCStRy6KbnuOwjzfan/k8KSpeGZYdmd39pLSSvy3De"], ["group", "下津島"], ["name", "萱森 粂子"], ["old_address", "浪江町下津島 100-39"], ["updated_at", "2014-06-29 07:52:42.707733"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's40@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "長野県XXXXX市 1-2-40"], ["created_at", "2014-06-29 07:52:42.785085"], ["email", "s40@namie.jp"], ["encrypted_password", "$2a$10$Xj70ZwCxooCYGoR4OjINxOnJAorviuU6hmY6w.Gm5qg3Z/gTiZDhq"], ["group", "西台"], ["name", "蟹江 なべ"], ["old_address", "浪江町西台 100-40"], ["updated_at", "2014-06-29 07:52:42.785085"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's41@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町高瀬 1-41"], ["created_at", "2014-06-29 07:52:42.866421"], ["email", "s41@namie.jp"], ["encrypted_password", "$2a$10$XtYCzQR./C0E0luGtKAOe.d80b.gAEOXVOmR7ECDcYhqvPugMjm6."], ["group", "高瀬"], ["name", "仲居 晴江"], ["old_address", "浪江町高瀬 100-41"], ["updated_at", "2014-06-29 07:52:42.866421"], ["zipcode", "9791751"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's42@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "大分県XXXXX市 1-2-42"], ["created_at", "2014-06-29 07:52:42.943330"], ["email", "s42@namie.jp"], ["encrypted_password", "$2a$10$Fpt6OZ4unKOaZ16NcboAIedZPckSCOhbEk4RuD3W.Q.cnQdD5jGPq"], ["group", "苅宿"], ["name", "平根 利廣"], ["old_address", "浪江町苅宿 100-42"], ["updated_at", "2014-06-29 07:52:42.943330"], ["zipcode", "9791751"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's43@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町両竹 1-43"], ["created_at", "2014-06-29 07:52:43.025133"], ["email", "s43@namie.jp"], ["encrypted_password", "$2a$10$.3V2h.tRxrr83.hOK9.ABenda2pF6OPt02/cwJDAQTDS0GDhWFApi"], ["group", "両竹"], ["name", "斎木 伸洋"], ["old_address", "浪江町両竹 100-43"], ["updated_at", "2014-06-29 07:52:43.025133"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's44@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "東京都XXXXX市 1-2-44"], ["created_at", "2014-06-29 07:52:43.104403"], ["email", "s44@namie.jp"], ["encrypted_password", "$2a$10$VCBy7buJkB3Xdem6WDsXKe49WFSKpBimXpepYeNr.E3Ye0hxAJOY."], ["group", "牛渡"], ["name", "石塚 玉緒"], ["old_address", "浪江町牛渡 100-44"], ["updated_at", "2014-06-29 07:52:43.104403"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's45@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町両竹 1-45"], ["created_at", "2014-06-29 07:52:43.183427"], ["email", "s45@namie.jp"], ["encrypted_password", "$2a$10$MZWguHjhPjTaPOM6tP7O2uI2OJ6xvgKh3g23kyN36iQugGEwp4fla"], ["group", "両竹"], ["name", "下清戸 光太郎"], ["old_address", "浪江町両竹 100-45"], ["updated_at", "2014-06-29 07:52:43.183427"], ["zipcode", "9791751"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's46@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "徳島県XXXXX市 1-2-46"], ["created_at", "2014-06-29 07:52:43.260612"], ["email", "s46@namie.jp"], ["encrypted_password", "$2a$10$16S4u50qGtoeWpFS.b4/k.Waa/jyvA3xY35OYcVhIZBcKD67eWY0O"], ["group", "末森"], ["name", "百草 康文"], ["old_address", "浪江町末森 100-46"], ["updated_at", "2014-06-29 07:52:43.260612"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's47@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "福島県双葉郡浪江町 1-47"], ["created_at", "2014-06-29 07:52:43.337383"], ["email", "s47@namie.jp"], ["encrypted_password", "$2a$10$yHJaBQJo0/wwd90T7.j6yuiuhm9f7JIOamYejJ.MZGnPbP5Tqv3KC"], ["name", "樽町 郁絵"], ["old_address", "浪江町 100-47"], ["updated_at", "2014-06-29 07:52:43.337383"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's48@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "愛知県XXXXX市 1-2-48"], ["created_at", "2014-06-29 07:52:43.413519"], ["email", "s48@namie.jp"], ["encrypted_password", "$2a$10$oTzqqBhclq1DGuWFi/TGM.Vf/DW9BIMtmqkcop6s22Mlr8vrK7AIe"], ["group", "大堀"], ["name", "高地 ダライ"], ["old_address", "浪江町大堀 100-48"], ["updated_at", "2014-06-29 07:52:43.413519"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's49@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "山口県XXXXX市 1-2-49"], ["created_at", "2014-06-29 07:52:43.491938"], ["email", "s49@namie.jp"], ["encrypted_password", "$2a$10$kIl1QXa2aDLk.Mmn02MOuexGPdQEew8D0KPNvsGHAN8kJJ8jNr73q"], ["group", "井手"], ["name", "入戸 てい"], ["old_address", "浪江町井手 100-49"], ["updated_at", "2014-06-29 07:52:43.491938"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's50@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町井手 1-50"], ["created_at", "2014-06-29 07:52:43.573146"], ["email", "s50@namie.jp"], ["encrypted_password", "$2a$10$sSocAIWDrU0Les4BjrouPuw7ENReNToRHHVJzn/4PdFfz6C0AodvG"], ["group", "井手"], ["name", "冨士原 富弥"], ["old_address", "浪江町井手 100-50"], ["updated_at", "2014-06-29 07:52:43.573146"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's51@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町昼曽根 1-51"], ["created_at", "2014-06-29 07:52:43.650494"], ["email", "s51@namie.jp"], ["encrypted_password", "$2a$10$Khv5.sGfspRxi0aF5sPAdea1a7ILNI2hd5O6y.oVDxmpMmUWNWIZm"], ["group", "昼曽根"], ["name", "マンゴーペ 秀正"], ["old_address", "浪江町昼曽根 100-51"], ["updated_at", "2014-06-29 07:52:43.650494"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's52@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町谷津田 1-52"], ["created_at", "2014-06-29 07:52:43.728852"], ["email", "s52@namie.jp"], ["encrypted_password", "$2a$10$NpKlvMn152AIc.0EzdFFXe5.DNeSo207Hu2.trDQey2uUN4WWoVNe"], ["group", "谷津田"], ["name", "津端 かおる"], ["old_address", "浪江町谷津田 100-52"], ["updated_at", "2014-06-29 07:52:43.728852"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's53@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "埼玉県XXXXX市 1-2-53"], ["created_at", "2014-06-29 07:52:43.807388"], ["email", "s53@namie.jp"], ["encrypted_password", "$2a$10$o1GF/vFTjWubi9W6WhixZ.VDeBhtWm0BE9tdc0kGudpy6xvNT0pK."], ["group", "藤橋"], ["name", "浅科 純一"], ["old_address", "浪江町藤橋 100-53"], ["updated_at", "2014-06-29 07:52:43.807388"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's54@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "茨城県XXXXX市 1-2-54"], ["created_at", "2014-06-29 07:52:43.884716"], ["email", "s54@namie.jp"], ["encrypted_password", "$2a$10$eMoxUx59EMdsuI0rkePobOo8b6gXnqEIRiWgNyD29.3THEaS6K/w2"], ["group", "室原"], ["name", "國吉 康江"], ["old_address", "浪江町室原 100-54"], ["updated_at", "2014-06-29 07:52:43.884716"], ["zipcode", "9791751"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's55@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町大堀 1-55"], ["created_at", "2014-06-29 07:52:43.962808"], ["email", "s55@namie.jp"], ["encrypted_password", "$2a$10$IRYFF055TQ3E9zFlJ4uAAeIKBwghKk4Fv7w4xNBrDAYhJ16tL.CpC"], ["group", "大堀"], ["name", "坂上 豊樹"], ["old_address", "浪江町大堀 100-55"], ["updated_at", "2014-06-29 07:52:43.962808"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's56@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "大阪府XXXXX市 1-2-56"], ["created_at", "2014-06-29 07:52:44.039247"], ["email", "s56@namie.jp"], ["encrypted_password", "$2a$10$ttBu6Sx1z.Pb/Y4gcL8.B.LSBhvM8m79W2RIHEGrWxXlFb8MqnhEG"], ["group", "両竹"], ["name", "納言 是"], ["old_address", "浪江町両竹 100-56"], ["updated_at", "2014-06-29 07:52:44.039247"], ["zipcode", "9791751"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's57@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町藤橋 1-57"], ["created_at", "2014-06-29 07:52:44.115956"], ["email", "s57@namie.jp"], ["encrypted_password", "$2a$10$bevtD2WdM5Cv2q/jZbRTeOMGYJZeyyLucFIIzIXcBN8RT7OlTlz7G"], ["group", "藤橋"], ["name", "杵築 幸長"], ["old_address", "浪江町藤橋 100-57"], ["updated_at", "2014-06-29 07:52:44.115956"], ["zipcode", "9791751"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's58@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町末森 1-58"], ["created_at", "2014-06-29 07:52:44.198046"], ["email", "s58@namie.jp"], ["encrypted_password", "$2a$10$1nb0rPwqVZErB6sMj43aUeueNLfvcTCBHDbWe843UrRaKGWznGZ9y"], ["group", "末森"], ["name", "九嶋 菊之丞"], ["old_address", "浪江町末森 100-58"], ["updated_at", "2014-06-29 07:52:44.198046"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's59@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "香川県XXXXX市 1-2-59"], ["created_at", "2014-06-29 07:52:44.273663"], ["email", "s59@namie.jp"], ["encrypted_password", "$2a$10$eqWkLW32Vo/4L3h0WWoc1uEifpZc.Ia1DMkgVdBGHJO7aBKLmyVMm"], ["group", "羽附"], ["name", "金村 芳春"], ["old_address", "浪江町羽附 100-59"], ["updated_at", "2014-06-29 07:52:44.273663"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's60@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町末森 1-60"], ["created_at", "2014-06-29 07:52:44.352427"], ["email", "s60@namie.jp"], ["encrypted_password", "$2a$10$enEcTw0pTTjKiGrrKfyerugnr6kFDFJhQCmViW/vq6G10Po3QeVa."], ["group", "末森"], ["name", "制野 洋昭"], ["old_address", "浪江町末森 100-60"], ["updated_at", "2014-06-29 07:52:44.352427"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's61@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "大阪府XXXXX市 1-2-61"], ["created_at", "2014-06-29 07:52:44.431353"], ["email", "s61@namie.jp"], ["encrypted_password", "$2a$10$pF1qzEOOZ1MAy8s0wUvOn.wksYqtPXMl3Y0S/yu9pKN6bL.FYaF2u"], ["group", "谷津田"], ["name", "桧原 直和"], ["old_address", "浪江町谷津田 100-61"], ["updated_at", "2014-06-29 07:52:44.431353"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's62@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町中浜 1-62"], ["created_at", "2014-06-29 07:52:44.509759"], ["email", "s62@namie.jp"], ["encrypted_password", "$2a$10$1WWGBATOZWYnlsepxB/bVecBCO13Akb5H8iIMgyedeEKopWKxPequ"], ["group", "中浜"], ["name", "安武 絵理香"], ["old_address", "浪江町中浜 100-62"], ["updated_at", "2014-06-29 07:52:44.509759"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's63@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "神奈川県XXXXX市 1-2-63"], ["created_at", "2014-06-29 07:52:44.588104"], ["email", "s63@namie.jp"], ["encrypted_password", "$2a$10$RADQgQf6RM2hHOpe6IKUuOMhmy4/orut4QA7IZSxXWWMQicmpIGGG"], ["group", "田尻"], ["name", "石船 梯二"], ["old_address", "浪江町田尻 100-63"], ["updated_at", "2014-06-29 07:52:44.588104"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's64@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町請戸 1-64"], ["created_at", "2014-06-29 07:52:44.665449"], ["email", "s64@namie.jp"], ["encrypted_password", "$2a$10$uiS90saFCHbh4xZaCKgjdObQkyh0pWar/df.GYclqOANv5j3yMm/2"], ["group", "請戸"], ["name", "浅黄 挽歌"], ["old_address", "浪江町請戸 100-64"], ["updated_at", "2014-06-29 07:52:44.665449"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's65@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町小野田 1-65"], ["created_at", "2014-06-29 07:52:44.742094"], ["email", "s65@namie.jp"], ["encrypted_password", "$2a$10$ovDzWp8pC0NVWV1zuDqD2uiiPUa4LLZ.wAQywjXcT4MzKOXsQqAEu"], ["group", "小野田"], ["name", "内海 尚孝"], ["old_address", "浪江町小野田 100-65"], ["updated_at", "2014-06-29 07:52:44.742094"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's66@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "北海道XXXXX市 1-2-66"], ["created_at", "2014-06-29 07:52:44.822980"], ["email", "s66@namie.jp"], ["encrypted_password", "$2a$10$i9zfGW8iENOtUVU0SrED7u7H4ixfKetYHfHMdpLkMnuIcbHw3HPPa"], ["group", "下津島"], ["name", "俣野 滲雨"], ["old_address", "浪江町下津島 100-66"], ["updated_at", "2014-06-29 07:52:44.822980"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's67@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町川添 1-67"], ["created_at", "2014-06-29 07:52:44.899715"], ["email", "s67@namie.jp"], ["encrypted_password", "$2a$10$kS8ZTkUe/pjUiiDC6CzP0.TbhJuE89CUN3O/wOqfuRrYkDHZh1aYW"], ["group", "川添"], ["name", "上町 章悦"], ["old_address", "浪江町川添 100-67"], ["updated_at", "2014-06-29 07:52:44.899715"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's68@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "福島県双葉郡浪江町 1-68"], ["created_at", "2014-06-29 07:52:44.982252"], ["email", "s68@namie.jp"], ["encrypted_password", "$2a$10$wafziyd4seT2BvGAtOai5uApX3.PfeqklX62M7M6KgWcZjR1Hqx5C"], ["name", "福間 ユキノ"], ["old_address", "浪江町 100-68"], ["updated_at", "2014-06-29 07:52:44.982252"], ["zipcode", "9791751"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's69@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "石川県XXXXX市 1-2-69"], ["created_at", "2014-06-29 07:52:45.061760"], ["email", "s69@namie.jp"], ["encrypted_password", "$2a$10$ISmR7XtCy1B2CUZURtKMPOeCqckdSAnZcE57TPUpXnwI4aPrO20UK"], ["group", "両竹"], ["name", "楢川 助次"], ["old_address", "浪江町両竹 100-69"], ["updated_at", "2014-06-29 07:52:45.061760"], ["zipcode", "9791751"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's70@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町南津島 1-70"], ["created_at", "2014-06-29 07:52:45.141209"], ["email", "s70@namie.jp"], ["encrypted_password", "$2a$10$FfuxpTpPmVKwOwYLIBupZuECnbusiO0YLcH7Z.Iy5N9QHchoelINm"], ["group", "南津島"], ["name", "宗宮 志信"], ["old_address", "浪江町南津島 100-70"], ["updated_at", "2014-06-29 07:52:45.141209"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's71@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町下津島 1-71"], ["created_at", "2014-06-29 07:52:45.218701"], ["email", "s71@namie.jp"], ["encrypted_password", "$2a$10$0LggUle1my5JTl5ixyD2UOvQmfp4NzW00L0IZhl0BZOfjYDqzNMd."], ["group", "下津島"], ["name", "田原 元吾"], ["old_address", "浪江町下津島 100-71"], ["updated_at", "2014-06-29 07:52:45.218701"], ["zipcode", "9791751"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's72@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福岡県XXXXX市 1-2-72"], ["created_at", "2014-06-29 07:52:45.295362"], ["email", "s72@namie.jp"], ["encrypted_password", "$2a$10$T90j8tYmSF9y6IwAczThyOTGjQO9zy5LUskgbmiddHZFxFGMh8TLm"], ["group", "北幾世橋"], ["name", "菅山 幸市"], ["old_address", "浪江町北幾世橋 100-72"], ["updated_at", "2014-06-29 07:52:45.295362"], ["zipcode", "9791751"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's73@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町川添 1-73"], ["created_at", "2014-06-29 07:52:45.372524"], ["email", "s73@namie.jp"], ["encrypted_password", "$2a$10$z44ZXrOLsv494rBknUoGuu9xyfTWXVtWliNCEeDnqKnjdn/7KiwCG"], ["group", "川添"], ["name", "シアヌーク 直弘"], ["old_address", "浪江町川添 100-73"], ["updated_at", "2014-06-29 07:52:45.372524"], ["zipcode", "9791751"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's74@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "富山県XXXXX市 1-2-74"], ["created_at", "2014-06-29 07:52:45.450248"], ["email", "s74@namie.jp"], ["encrypted_password", "$2a$10$wVXWpvRHtd3NTeloabV/7O8ia4l5KNhV0S.i2bvaiu.qDfAd4B0IK"], ["group", "樋渡"], ["name", "ピアーズ 晃浩"], ["old_address", "浪江町樋渡 100-74"], ["updated_at", "2014-06-29 07:52:45.450248"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's75@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "石川県XXXXX市 1-2-75"], ["created_at", "2014-06-29 07:52:45.529857"], ["email", "s75@namie.jp"], ["encrypted_password", "$2a$10$dDe7YyTAo4nPsgL5Wn6VD.7dJnzKAI6nxNPqXXItIr9ZsLOZnge8e"], ["group", "川房"], ["name", "板付 かね子"], ["old_address", "浪江町川房 100-75"], ["updated_at", "2014-06-29 07:52:45.529857"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's76@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "群馬県XXXXX市 1-2-76"], ["created_at", "2014-06-29 07:52:45.606179"], ["email", "s76@namie.jp"], ["encrypted_password", "$2a$10$x9ViJBt/alN0YFJDbMdK6OtTrRxUJVmS2N8NsuXmrq2BxLIhCB/lq"], ["group", "請戸"], ["name", "粕谷 佐紀江"], ["old_address", "浪江町請戸 100-76"], ["updated_at", "2014-06-29 07:52:45.606179"], ["zipcode", "9791751"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's77@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町谷津田 1-77"], ["created_at", "2014-06-29 07:52:45.687389"], ["email", "s77@namie.jp"], ["encrypted_password", "$2a$10$Tz0JImvF/IX8q9vLJnzSaOorEqyaR.Kw1QRtnFsXXFA1vgsUrzQ52"], ["group", "谷津田"], ["name", "戸河内 章太郎"], ["old_address", "浪江町谷津田 100-77"], ["updated_at", "2014-06-29 07:52:45.687389"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's78@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福井県XXXXX市 1-2-78"], ["created_at", "2014-06-29 07:52:45.767005"], ["email", "s78@namie.jp"], ["encrypted_password", "$2a$10$cqBfaOyFnmsHvmEayitQvuaff0pvYr/FvaZ0l5TLjMWThnPJLQ8l2"], ["group", "谷津田"], ["name", "宮越 正紀"], ["old_address", "浪江町谷津田 100-78"], ["updated_at", "2014-06-29 07:52:45.767005"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's79@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町小丸 1-79"], ["created_at", "2014-06-29 07:52:45.845227"], ["email", "s79@namie.jp"], ["encrypted_password", "$2a$10$pbwGFO6OF7lz3NIXe6Ydc.06I9.CFrXtqGEoaGrcXwx4Xi5c0z.6W"], ["group", "小丸"], ["name", "保科 元助"], ["old_address", "浪江町小丸 100-79"], ["updated_at", "2014-06-29 07:52:45.845227"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's80@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "宮崎県XXXXX市 1-2-80"], ["created_at", "2014-06-29 07:52:45.921432"], ["email", "s80@namie.jp"], ["encrypted_password", "$2a$10$YOeGUp/P3uVvBkhVK53TkeltOpAU8ko.VQSi/tOJM3rulyd8hNJTa"], ["group", "小丸"], ["name", "徳野 助一"], ["old_address", "浪江町小丸 100-80"], ["updated_at", "2014-06-29 07:52:45.921432"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's81@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "兵庫県XXXXX市 1-2-81"], ["created_at", "2014-06-29 07:52:45.999125"], ["email", "s81@namie.jp"], ["encrypted_password", "$2a$10$XjU2iunIFlSbEYC.YDisRuCub3CENFYlkCKhTCmQmYiL9DiFh0okC"], ["group", "谷津田"], ["name", "海島 博良"], ["old_address", "浪江町谷津田 100-81"], ["updated_at", "2014-06-29 07:52:45.999125"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's82@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "佐賀県XXXXX市 1-2-82"], ["created_at", "2014-06-29 07:52:46.075925"], ["email", "s82@namie.jp"], ["encrypted_password", "$2a$10$jXFOwBxtCONxpmZ99aNGle1dOGOLCMqJIBoRV4NhEiOot.w35ePGK"], ["group", "津島"], ["name", "福住 満則"], ["old_address", "浪江町津島 100-82"], ["updated_at", "2014-06-29 07:52:46.075925"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's83@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "宮崎県XXXXX市 1-2-83"], ["created_at", "2014-06-29 07:52:46.152806"], ["email", "s83@namie.jp"], ["encrypted_password", "$2a$10$ct0JBHU0NbHGze3NSfOF7OhSML6hKfEi9vOOiDmWVpfo7d.IDubGm"], ["group", "末森"], ["name", "前島 涼子"], ["old_address", "浪江町末森 100-83"], ["updated_at", "2014-06-29 07:52:46.152806"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's84@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町井手 1-84"], ["created_at", "2014-06-29 07:52:46.229553"], ["email", "s84@namie.jp"], ["encrypted_password", "$2a$10$NUV/dZlTntIULkvFrNfjd.Has3YrVLPrn50HNPAdwKTxP/Vg1FbL."], ["group", "井手"], ["name", "マクミラン 定道"], ["old_address", "浪江町井手 100-84"], ["updated_at", "2014-06-29 07:52:46.229553"], ["zipcode", "9791751"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's85@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "香川県XXXXX市 1-2-85"], ["created_at", "2014-06-29 07:52:46.307340"], ["email", "s85@namie.jp"], ["encrypted_password", "$2a$10$G47MnPJHFmxmlxFcGUUy..5gRFwYu993fPLXom8asnX.en6SP/ZbK"], ["group", "権現堂"], ["name", "竹尾 菜津子"], ["old_address", "浪江町権現堂 100-85"], ["updated_at", "2014-06-29 07:52:46.307340"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's86@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "青森県XXXXX市 1-2-86"], ["created_at", "2014-06-29 07:52:46.391347"], ["email", "s86@namie.jp"], ["encrypted_password", "$2a$10$WGrU/97F4O.Tro.b0.jNvuJcRxe8H38TYFJwRc/JDyrcZLp7Eb1o2"], ["group", "川添"], ["name", "額田 美禰"], ["old_address", "浪江町川添 100-86"], ["updated_at", "2014-06-29 07:52:46.391347"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's87@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "鳥取県XXXXX市 1-2-87"], ["created_at", "2014-06-29 07:52:46.470461"], ["email", "s87@namie.jp"], ["encrypted_password", "$2a$10$Sb5l4MY2ymF7nJn3KjK0w.5BfJfO/n.FLOAer79pDjmt/5LepS0ui"], ["group", "下津島"], ["name", "藤牧 胡夷"], ["old_address", "浪江町下津島 100-87"], ["updated_at", "2014-06-29 07:52:46.470461"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's88@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町両竹 1-88"], ["created_at", "2014-06-29 07:52:46.548480"], ["email", "s88@namie.jp"], ["encrypted_password", "$2a$10$hYMJ8KCP96r4XXkMDBmTC.ipSTJP0J0opqubiGoKZ91/8iWupcPDu"], ["group", "両竹"], ["name", "嶺村 聡司"], ["old_address", "浪江町両竹 100-88"], ["updated_at", "2014-06-29 07:52:46.548480"], ["zipcode", "9791751"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's89@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町苅宿 1-89"], ["created_at", "2014-06-29 07:52:46.630653"], ["email", "s89@namie.jp"], ["encrypted_password", "$2a$10$oLSlhDY/3VRsRRdeMvuxHuZWYSvwMobYX0xhyFAdfJ982REOyd2xe"], ["group", "苅宿"], ["name", "末松 恒見"], ["old_address", "浪江町苅宿 100-89"], ["updated_at", "2014-06-29 07:52:46.630653"], ["zipcode", "9791751"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's90@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "京都府XXXXX市 1-2-90"], ["created_at", "2014-06-29 07:52:46.712951"], ["email", "s90@namie.jp"], ["encrypted_password", "$2a$10$UiNjKIf6QakwuIL20YwVo.cd6F71H8jpsRBOeZeJuQNt1qibCpf42"], ["group", "谷津田"], ["name", "トンバ 景盛"], ["old_address", "浪江町谷津田 100-90"], ["updated_at", "2014-06-29 07:52:46.712951"], ["zipcode", "9791751"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's91@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町谷津田 1-91"], ["created_at", "2014-06-29 07:52:46.789767"], ["email", "s91@namie.jp"], ["encrypted_password", "$2a$10$YO8xDDnC3XQwXigmvvnZxO.3PKOBLnKG3n8JYvGeufNCxc.86l4SW"], ["group", "谷津田"], ["name", "池野 照生"], ["old_address", "浪江町谷津田 100-91"], ["updated_at", "2014-06-29 07:52:46.789767"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's92@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福井県XXXXX市 1-2-92"], ["created_at", "2014-06-29 07:52:46.866701"], ["email", "s92@namie.jp"], ["encrypted_password", "$2a$10$978HigfBuSaYRr/pPw27n.Q4dBNqS14wm4IYZMx.nQhZsf18fVTm2"], ["group", "井手"], ["name", "小田嶋 拓三"], ["old_address", "浪江町井手 100-92"], ["updated_at", "2014-06-29 07:52:46.866701"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's93@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "山形県XXXXX市 1-2-93"], ["created_at", "2014-06-29 07:52:46.943591"], ["email", "s93@namie.jp"], ["encrypted_password", "$2a$10$SdXvcdJfJTclSxmP6eajGOg8mK7vtOLQM2FmWoh1or.npvbKKmn1S"], ["group", "樋渡"], ["name", "美空 真清"], ["old_address", "浪江町樋渡 100-93"], ["updated_at", "2014-06-29 07:52:46.943591"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's94@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "三重県XXXXX市 1-2-94"], ["created_at", "2014-06-29 07:52:47.022778"], ["email", "s94@namie.jp"], ["encrypted_password", "$2a$10$25tqojWpxLGZ1gbdYrPNO.WkFYfusdHs9m3Xz5mCjZYz7YmpNAn9W"], ["group", "中浜"], ["name", "近道 雅春"], ["old_address", "浪江町中浜 100-94"], ["updated_at", "2014-06-29 07:52:47.022778"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's95@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町田尻 1-95"], ["created_at", "2014-06-29 07:52:47.100986"], ["email", "s95@namie.jp"], ["encrypted_password", "$2a$10$ywj6ZsajiVsAN2Cu.4czXeuYMLEkMUlmEtUAatwGzLek2tK/./J0u"], ["group", "田尻"], ["name", "朝比奈 浩俊"], ["old_address", "浪江町田尻 100-95"], ["updated_at", "2014-06-29 07:52:47.100986"], ["zipcode", "9791751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's96@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町酒田 1-96"], ["created_at", "2014-06-29 07:52:47.179249"], ["email", "s96@namie.jp"], ["encrypted_password", "$2a$10$.Tp3suHKO5WyjJWLTJNLBOF.LyK9xXkbvXg.hR5Uty6aM00rPrJEq"], ["group", "酒田"], ["name", "桜坂 貴徳"], ["old_address", "浪江町酒田 100-96"], ["updated_at", "2014-06-29 07:52:47.179249"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's97@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "愛媛県XXXXX市 1-2-97"], ["created_at", "2014-06-29 07:52:47.254886"], ["email", "s97@namie.jp"], ["encrypted_password", "$2a$10$GebSvomK4dhWLn6E5VJNRObTbxg8ff0UglLa.z6eukwwkIyt8PG1C"], ["group", "羽附"], ["name", "長嶺 愛橘"], ["old_address", "浪江町羽附 100-97"], ["updated_at", "2014-06-29 07:52:47.254886"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's98@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "神奈川県XXXXX市 1-2-98"], ["created_at", "2014-06-29 07:52:47.342334"], ["email", "s98@namie.jp"], ["encrypted_password", "$2a$10$k8HSv9/hMkiWfRdneqf5IONPK7qsJWApz0zDkLEs9wrAOKAdPuhDC"], ["group", "田尻"], ["name", "宮住 粋子"], ["old_address", "浪江町田尻 100-98"], ["updated_at", "2014-06-29 07:52:47.342334"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's99@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "福島県双葉郡浪江町小野田 1-99"], ["created_at", "2014-06-29 07:52:47.433018"], ["email", "s99@namie.jp"], ["encrypted_password", "$2a$10$Gw.XC1l.8gnEryA1LxetPOby6aFaRwPa1f4DlnQ1Vt8O5NRBpNDVm"], ["group", "小野田"], ["name", "金 嘉言"], ["old_address", "浪江町小野田 100-99"], ["updated_at", "2014-06-29 07:52:47.433018"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 's100@namie.jp' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address", "created_at", "email", "encrypted_password", "group", "name", "old_address", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["address", "山梨県XXXXX市 1-2-100"], ["created_at", "2014-06-29 07:52:47.519976"], ["email", "s100@namie.jp"], ["encrypted_password", "$2a$10$E25JrfdB6Z69a6awPyHuTezIpsKEgfVwtabTKLNAOm5QACJhOsBCa"], ["group", "昼曽根"], ["name", "小布施 辰江"], ["old_address", "浪江町昼曽根 100-100"], ["updated_at", "2014-06-29 07:52:47.519976"], ["zipcode", "9791751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/x/messages/1/edit" for 127.0.0.1 at 2014-06-29 07:52:58 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by X::MessagesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAdmin Load (0.8ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+Completed 401 Unauthorized in 113ms
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2014-06-29 07:52:58 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/top (119.2ms)
+Completed 200 OK in 202ms (Views: 196.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in" for 127.0.0.1 at 2014-06-29 07:53:06 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6RWdLl6D7E8of8+Y+uz0pYo+fSudP1tr6N3BlDxnGR8=", "admin"=>{"email"=>"junwako@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mAdmin Load (0.7ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."email" = 'junwako@gmail.com'  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "admins" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "admins"."id" = 1[0m  [["current_sign_in_at", "2014-06-29 07:53:06.917317"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-06-29 07:53:06.917317"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-06-29 07:53:06.919749"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/x/home
+Completed 302 Found in 94ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/x/home" for 127.0.0.1 at 2014-06-29 07:53:06 +0900
+Processing by X::HomeController#show as HTML
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  Rendered x/home/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2014-06-29 07:53:11 +0900
+Processing by HomeController#show as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Completed 401 Unauthorized in 18ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-06-29 07:53:11 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/top (4.4ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-06-29 07:53:17 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KNM4zn1I0H2CO5DoIH6pjgollfK51U26EoNUZ5jcfpY=", "user"=>{"email"=>"s1@namie.jp", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 's1@namie.jp'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-06-29 07:53:17.996555"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-06-29 07:53:17.996555"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-06-29 07:53:17.997726"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/home
+Completed 302 Found in 89ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2014-06-29 07:53:18 +0900
+Processing by HomeController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.9ms)[0m  SELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC  [["user_id", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (text IS NOT NULL)  ORDER BY id DESC[0m  [["user_id", 1]]
+  Rendered home/show.html.erb within layouts/top (4.5ms)
+Completed 200 OK in 46ms (Views: 11.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at 2014-06-29 07:53:21 +0900
+Processing by MessagesController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered common/_error.html.erb (0.5ms)
+  Rendered messages/new.html.erb within layouts/top (10.8ms)
+Completed 200 OK in 25ms (Views: 20.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2014-06-29 07:53:40 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9tyPobGzOalzx2k5748kmWCuYk1N1Bc0goo7jP+Sosc=", "message"=>{"address"=>#<ActionDispatch::Http::UploadedFile:0x007f8268ae53e8 @tempfile=#<Tempfile:/var/folders/dh/5rrpwh3s39j82nnsrv9fgbfm0000gp/T/RackMultipart20140629-41200-qtwvyd>, @original_filename="image (1).jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"message[address]\"; filename=\"image (1).jpeg\"\r\nContent-Type: image/jpeg\r\n">, "message"=>#<ActionDispatch::Http::UploadedFile:0x007f8268ae4c18 @tempfile=#<Tempfile:/var/folders/dh/5rrpwh3s39j82nnsrv9fgbfm0000gp/T/RackMultipart20140629-41200-tfqtrm>, @original_filename="image.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"message[message]\"; filename=\"image.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"送信"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "messages" ("address", "created_at", "message", "owner_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "516b6385-ddb5-42c6-92d6-2984f9ceb39f.jpeg"], ["created_at", "2014-06-29 07:53:40.880602"], ["message", "e8ad01b1-4495-425b-8021-21dc46d5a358.jpeg"], ["owner_id", 1], ["updated_at", "2014-06-29 07:53:40.880602"]]
+  [1m[35m (2.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/home
+Completed 302 Found in 12190ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2014-06-29 07:53:52 +0900
+Processing by HomeController#show as HTML
+  [1m[36mUser Load (11.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.5ms)[0m  SELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC  [["user_id", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (text IS NOT NULL)  ORDER BY id DESC[0m  [["user_id", 1]]
+  Rendered home/show.html.erb within layouts/top (2.0ms)
+Completed 200 OK in 27ms (Views: 11.2ms | ActiveRecord: 12.1ms)

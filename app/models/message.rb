@@ -4,6 +4,7 @@ class Message < ActiveRecord::Base
 	has_many :users, :through => :senders
 	belongs_to :reply_to, class_name: 'User', foreign_key: "reply_to"
 
+	mount_uploader :address, MessageUploader
 	mount_uploader :message, MessageUploader
 
 	scope :notifications, -> { where("text IS NOT NULL") }
