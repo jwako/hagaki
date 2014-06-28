@@ -4,7 +4,7 @@ class X::UsersController < ApplicationController
 
   def index
   	@q = User.search(params[:q])
-	  @users = @q.result(distinct: true)
+	  @users = @q.result(distinct: true).order(:id)
   end
 
   def show

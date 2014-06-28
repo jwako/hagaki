@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def self.options_for_select
-    User.all.collect do |usr|
+    User.order(:id).collect do |usr|
       [usr.name, usr.id]
     end
   end

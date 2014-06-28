@@ -10,7 +10,7 @@
     		<div class="col-md-6">
 					<%= search_form_for @q, url: x_users_path do |f| %>
 					<div class="input-group input-group-lg">
-						<%= f.text_field :name_or_address_cont, placeholder: "氏名もしくは住所", class: "form-control" %>
+						<%= f.text_field :name_or_address_or_group_cont, placeholder: "氏名もしくは住所もしくは地域", class: "form-control" %>
 				    <span class="input-group-btn">
 				    	<%= button_tag(type: 'submit', class: 'btn btn-default', name: nil) do %>
 								<i class="fa fa-search"></i>
@@ -25,13 +25,15 @@
       <table class="table table-striped">
       <tr>
         <th class="col-lg-2 text-center">氏名</th>
+        <th class="col-lg-1 text-center">地域</th>
         <th class="col-lg-4 text-center">現住所</th>
         <th class="col-lg-3 text-center">旧住所</th>
-        <th class="col-lg-3 text-center">Email</th>
+        <th class="col-lg-2 text-center">Email</th>
       </tr>
       <% @users.each do |user| %>
       <tr>
         <td class="text-left"><%= user.name %></td>
+        <td class="text-left"><%= user.group %></td>
         <td class="text-left">〒<%= user.zipcode %> <%= user.address %></td>
         <td class="text-left"><%= user.old_address %></td>
         <td class="text-left"><%= user.email %></td>

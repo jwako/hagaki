@@ -3,13 +3,13 @@ class X::MessagesController < ApplicationController
 	before_filter :authenticate_admin!
 
   def index
-  	@messages = Message.mails.order(:id)
+  	@messages = Message.mails.order("id DESC")
   end
 
   def edit
   	setup_message
   	@q = User.search(params[:q])
-	  @users = @q.result(distinct: true)
+	  @users = @q.result(distinct: true).order(:id)
   end
 
   def update

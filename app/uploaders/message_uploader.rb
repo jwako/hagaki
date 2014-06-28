@@ -5,6 +5,8 @@ class MessageUploader < CarrierWave::Uploader::Base
   # storage :fog
   storage :file
   
+  process :auto_orient # this should go before all other "process" steps
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
@@ -27,10 +29,17 @@ class MessageUploader < CarrierWave::Uploader::Base
     "/assets/default.png"
   end
 
+  def auto_orient
+    manipulate! do |image|
+      image.tap(&:auto_orient)
+    end
+  end
+
   protected
 
   def secure_token
     var = :"@#{mounted_as}_secure_token"
     model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
   end
+
 end

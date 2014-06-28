@@ -9,6 +9,7 @@
       <tr>
         <th class="col-lg-1 text-center"></th>
         <th class="col-lg-6 text-center">メッセージ</th>
+        <th class="col-lg-3 text-center">送信日時</th>
         <th class="col-lg-2 text-center"></th>
       </tr>
       <% @messages.each do |message| %>
@@ -16,7 +17,10 @@
       <tr>
         <td class="text-center"><%= message.id %></td>
         <td class="text-center"><%= image_tag(message.message.url, class: "img-responsive", alt: "message") %></td>
-        <td class="text-center"><%= link_to "宛先を紐付ける", edit_x_message_path(message), class: "btn btn-lg btn-primary" %></td>
+        <td class="text-center"><%= message.created_at.strftime("%Y-%m-%d %H:%H") %></td>
+        <td class="text-center">
+        <%= link_to "宛先を紐付ける", edit_x_message_path(message), class: "btn btn-lg btn-block btn-primary" %>
+        </td>
       </tr>
       <% end %>
       <% end %>
