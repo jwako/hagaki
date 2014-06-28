@@ -1,0 +1,6 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "AdminLTE": "git@github.com:almasaeed2010/AdminLTE.git#1.2"
+  }
+}
