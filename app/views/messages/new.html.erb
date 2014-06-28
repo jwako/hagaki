@@ -4,6 +4,9 @@
     <div class="portlet-body">
     <%= form_for @message, :url => messages_path, html: { multipart: true } do |f| %>
       <%= render "common/error", object: @message %>
+      <% if @sender %>
+      <%= hidden_field_tag :sender, @sender.id %>
+      <% end %>
       <div class="form-group">
         <%= f.file_field :message %>
       </div>

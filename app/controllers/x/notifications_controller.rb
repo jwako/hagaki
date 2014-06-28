@@ -15,6 +15,7 @@ class X::NotificationsController < ApplicationController
 
   def create
     @message = Message.new(message_params)
+    @message.reply_to = User.find(params[:reply_to]) if params[:reply_to]
     @message.users << User.all
     if @message.save
       redirect_to x_notifications_path
@@ -43,7 +44,7 @@ class X::NotificationsController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:message, :text)
+    params.require(:message).permit(:message, :text, :reply_to)
   end
 
 end

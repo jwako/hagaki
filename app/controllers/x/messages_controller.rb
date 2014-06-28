@@ -4,7 +4,6 @@ class X::MessagesController < ApplicationController
 
   def index
   	@messages = Message.mails.order(:id)
-    # @messages = @messages.collect{|msg| msg if msg.users.blank? }
   end
 
   def edit
