@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module Hagaki
   class Application < Rails::Application
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -18,6 +21,26 @@ module Hagaki
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = :ja
+
+    # Generators
+    config.generators do |g|
+      g.stylesheets false
+      g.javascripts false
+      g.helper false
+      g.template_engine :erb
+      g.test_framework :rspec, view_specs: false, helper_specs: false, routing_specs: false, fixture: true
+      g.fixture_replacement :factory_girl, dir: "spec/factories"
+      g.decorator false
+    end
+
+    # Add assets path for fonts
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components', 'AdminLTE', 'fonts')
+
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.assets.paths << "#{Rails.root}/vendor/assets/bower_components/AdminLTE/css/iCheck"
   end
 end
