@@ -34,18 +34,18 @@
   background-size: cover;
 }
 #guide1 .button {
-	background: url("guide1_button_hover.png") no-repeat;
-	margin-top: 1156px;
+	background: url("guide1_btn1_hover_Y1030.png") no-repeat;
+	margin-top: 1030px;
 	margin-left: 300px;
 }
 #guide1 .button a {
-	width: 910px;
+	width: 940px;
 	display: block;
-	background: url("guide1_button.png") no-repeat;
+	background: url("guide1_btn1_Y1030.png") no-repeat;
 	text-align: left;
 }
 #guide1 .button a span {
-	height: 135px;
+	height: 140px;
 	display: block;
 	text-indent: -9999px;
 }
