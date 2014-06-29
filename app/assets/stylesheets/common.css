@@ -36,7 +36,7 @@
 }
 
 #guide1 {
-	background: url("guide1.png");
+	background: url("guide1.png") no-repeat;
   -webkit-background-size: 800px 1128px;
   background-size: 800px 1128px;
 /*  -webkit-background-size: cover;
@@ -51,13 +51,13 @@
 	margin-left: 130px;
 }
 #guide1 .button a {
-	/*width: 940px;*/
+	width: 626px;
 	display: block;
 	background: url("guide1_btn1_Y1030.png") no-repeat;
 	text-align: left;
 }
 #guide1 .button a span {
-	height: 140px;
+	height: 93px;
 	display: block;
 	text-indent: -9999px;
 }
