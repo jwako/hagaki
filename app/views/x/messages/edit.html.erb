@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <div class="box">
     <div class="box-header">
-    <h3 class="box-title">メッセージ一覧</h3>
+    <h3 class="box-title">宛先紐付け</h3>
     </div><!-- /.box-header -->
     <div class="box-body">
     	<div class="row">
@@ -31,10 +31,9 @@
 		      <tr>
 		      	<th class="col-lg-1 text-center"></th>
 		        <th class="col-lg-2 text-center">氏名</th>
-		        <th class="col-lg-1 text-center">地域</th>
+		        <th class="col-lg-2 text-center">地域</th>
 		        <th class="col-lg-4 text-center">現住所</th>
 		        <th class="col-lg-3 text-center">旧住所</th>
-		        <th class="col-lg-2 text-center">Email</th>
 		      </tr>
 		      <% @users.each do |user| %>
 		      <tr>
@@ -45,9 +44,11 @@
 		      	</td>
 		        <td class="text-left"><%= user.name %></td>
 		        <td class="text-left"><%= user.group %></td>
-		        <td class="text-left">〒<%= user.zipcode %> <%= user.address %></td>
+		        <td class="text-left">
+		        	〒<%= user.zipcode %><br>
+		        	<%= user.address %>
+		        </td>
 		        <td class="text-left"><%= user.old_address %></td>
-		        <td class="text-left"><%= user.email %></td>
 		      </tr>
 		      <% end %>
 		      </table>
