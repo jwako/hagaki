@@ -39,25 +39,20 @@
 	background: url("guide1.png") no-repeat;
   -webkit-background-size: 800px 1128px;
   background-size: 800px 1128px;
-/*  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;*/
 }
 
 #guide1 .button {
 	background: url("guide1_btn1_hover_Y1030.png") no-repeat;
 	margin-top: 686px;
-	margin-left: 130px;
+	margin-left: 86px;
 }
 #guide1 .button a {
-	width: 626px;
 	display: block;
 	background: url("guide1_btn1_Y1030.png") no-repeat;
 	text-align: left;
 }
 #guide1 .button a span {
-	height: 93px;
+	height: 140px;
 	display: block;
 	text-indent: -9999px;
 }
