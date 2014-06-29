@@ -25,14 +25,27 @@
 
 #guide1 {
 	background: url("guide1.png") left top no-repeat !important;
-	height: 1920px;
-	width: 1000px;
+	height: 846px;
+	width: 600px;
+	display:block;
+}
+#guide1 .button {
+	background: url("guide1_button_hover.png") no-repeat;
+	margin-top: 500px;
+	margin-left: 75px;
+}
+#guide1 .button a {
+	width: 455px;
+	display: block;
+	background: url("guide1_button.png") no-repeat;
+	text-align: left;
+}
+#guide1 .button a span {
+	height: 68px;
+	display: block;
+	text-indent: -9999px;
+}
+#guide1 .button a:hover {
+	background: none;
 }
 
-#guide1 .top-100 {
-	margin-top: 100px;
-}
-
-#guide1 .left-100 {
-	margin-left: 100px;
-}
