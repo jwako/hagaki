@@ -24,14 +24,18 @@
 }
 
 #guide1 {
-	background: url("guide1.png") left top no-repeat !important;
-	width: 1920px;
-	height: 1200px;
+	background: url("guide1.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+/*	width: 1200px;
+	height: 1920px;
 	display:block;
 	-webkit-background-size: 1200px 1900px;
 	-moz-background-size: 1200px 1900px;
 	-o-background-size: 1200px 1900px;
-	-ms-background-size: 1200px 1900px;
+	-ms-background-size: 1200px 1900px;*/
 }
 #guide1 .button {
 	background: url("guide1_button_hover.png") no-repeat;
