@@ -32,13 +32,13 @@
 }
 
 .guide-component {
-	height: 1692px;
+	height: 1292px;
 }
 
 #guide1 {
 	background: url("guide1.png");
-  -webkit-background-size: 1000px 1492px;
-  background-size: 1000px 1492px;
+  -webkit-background-size: 800px 1292px;
+  background-size: 800px 1292px;
 /*  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
