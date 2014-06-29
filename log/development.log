@@ -15437,3 +15437,1323 @@ Processing by ReceivesController#index as HTML
   [1m[36mMessage Load (0.5ms)[0m  [1mSELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC[0m  [["user_id", 3]]
   Rendered receives/index.html.erb within layouts/top (2.8ms)
 Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at 2014-06-29 09:36:42 +0900
+Processing by MessagesController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered common/_error.html.erb (0.0ms)
+  Rendered messages/new.html.erb within layouts/top (1.4ms)
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2014-06-29 09:36:51 +0900
+Processing by HomeController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.5ms)[0m  SELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC  [["user_id", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1mSELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (text IS NOT NULL)  ORDER BY id DESC[0m  [["user_id", 1]]
+  Rendered home/show.html.erb within layouts/top (3.7ms)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2014-06-29 09:37:00 +0900
+Processing by HomeController#show as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mMessage Load (0.4ms)[0m  [1mSELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC[0m  [["user_id", 1]]
+  [1m[35mMessage Load (0.5ms)[0m  SELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (text IS NOT NULL)  ORDER BY id DESC  [["user_id", 1]]
+  Rendered home/show.html.erb within layouts/top (2.4ms)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/x/notifications" for 127.0.0.1 at 2014-06-29 09:41:02 +0900
+Processing by X::NotificationsController#index as HTML
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages"  WHERE (text IS NOT NULL)
+  Rendered x/notifications/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 33ms (Views: 9.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/x/notifications/new" for 127.0.0.1 at 2014-06-29 09:41:03 +0900
+Processing by X::NotificationsController#new as HTML
+  [1m[36mAdmin Load (0.5ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  Rendered common/_error.html.erb (0.1ms)
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users"   ORDER BY "users"."id" ASC
+  Rendered x/notifications/new.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 51ms (Views: 41.3ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/x/notifications" for 127.0.0.1 at 2014-06-29 09:41:18 +0900
+Processing by X::NotificationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MCwn/4Uud0EEjn1zMw93o/NBiM7vp87Mn/JiaM4fq7A=", "message"=>{"text"=>"おくやみ情報 田中"}, "reply_to"=>"3", "commit"=>"登録"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "messages" ("created_at", "reply_to", "text", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.926862"], ["reply_to", 3], ["text", "おくやみ情報 田中"], ["updated_at", "2014-06-29 09:41:18.926862"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.930016"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.930016"], ["user_id", 2]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.931372"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.931372"], ["user_id", 4]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.932489"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.932489"], ["user_id", 5]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.934220"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.934220"], ["user_id", 6]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.936016"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.936016"], ["user_id", 7]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.937568"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.937568"], ["user_id", 8]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.938906"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.938906"], ["user_id", 9]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.939925"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.939925"], ["user_id", 10]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.940923"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.940923"], ["user_id", 11]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.941836"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.941836"], ["user_id", 12]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.942670"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.942670"], ["user_id", 13]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.943479"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.943479"], ["user_id", 14]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.944291"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.944291"], ["user_id", 15]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.945092"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.945092"], ["user_id", 16]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.945967"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.945967"], ["user_id", 17]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.946859"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.946859"], ["user_id", 18]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.947933"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.947933"], ["user_id", 19]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.948831"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.948831"], ["user_id", 20]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.949787"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.949787"], ["user_id", 21]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.950752"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.950752"], ["user_id", 22]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.951786"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.951786"], ["user_id", 23]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.952729"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.952729"], ["user_id", 24]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.953619"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.953619"], ["user_id", 25]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.954578"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.954578"], ["user_id", 26]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.955533"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.955533"], ["user_id", 27]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.956531"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.956531"], ["user_id", 28]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.957447"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.957447"], ["user_id", 29]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.958383"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.958383"], ["user_id", 30]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.959315"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.959315"], ["user_id", 31]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.960219"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.960219"], ["user_id", 32]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.961183"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.961183"], ["user_id", 33]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.962120"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.962120"], ["user_id", 34]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.963102"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.963102"], ["user_id", 35]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.964132"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.964132"], ["user_id", 36]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.964988"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.964988"], ["user_id", 37]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.965835"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.965835"], ["user_id", 38]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.966758"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.966758"], ["user_id", 39]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.967739"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.967739"], ["user_id", 40]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.968659"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.968659"], ["user_id", 41]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.969581"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.969581"], ["user_id", 42]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.970557"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.970557"], ["user_id", 43]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.971452"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.971452"], ["user_id", 44]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.972280"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.972280"], ["user_id", 45]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.973076"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.973076"], ["user_id", 46]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.973875"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.973875"], ["user_id", 47]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.974664"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.974664"], ["user_id", 48]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.975569"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.975569"], ["user_id", 49]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.976501"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.976501"], ["user_id", 50]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.977444"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.977444"], ["user_id", 51]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.978278"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.978278"], ["user_id", 52]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.979158"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.979158"], ["user_id", 53]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.980264"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.980264"], ["user_id", 54]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.981275"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.981275"], ["user_id", 55]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.982569"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.982569"], ["user_id", 56]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.983986"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.983986"], ["user_id", 57]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.985123"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.985123"], ["user_id", 58]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.986295"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.986295"], ["user_id", 59]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.987699"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.987699"], ["user_id", 60]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.989021"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.989021"], ["user_id", 61]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.989932"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.989932"], ["user_id", 62]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.990752"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.990752"], ["user_id", 63]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.991564"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.991564"], ["user_id", 64]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.992391"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.992391"], ["user_id", 65]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.993325"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.993325"], ["user_id", 66]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.994158"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.994158"], ["user_id", 67]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.994964"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.994964"], ["user_id", 68]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.995868"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.995868"], ["user_id", 69]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.997258"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.997258"], ["user_id", 70]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.998171"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.998171"], ["user_id", 71]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:18.998975"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.998975"], ["user_id", 72]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:18.999884"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:18.999884"], ["user_id", 73]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:19.000868"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.000868"], ["user_id", 74]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:19.001744"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.001744"], ["user_id", 75]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:19.002633"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.002633"], ["user_id", 76]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:19.003790"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.003790"], ["user_id", 77]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:19.004715"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.004715"], ["user_id", 78]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:19.005700"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.005700"], ["user_id", 79]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:19.006699"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.006699"], ["user_id", 80]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:19.007651"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.007651"], ["user_id", 81]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:19.008497"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.008497"], ["user_id", 82]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:19.009475"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.009475"], ["user_id", 83]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:19.010433"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.010433"], ["user_id", 84]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:19.011366"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.011366"], ["user_id", 85]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:19.012241"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.012241"], ["user_id", 86]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:19.013205"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.013205"], ["user_id", 87]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:19.014221"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.014221"], ["user_id", 88]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:19.015185"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.015185"], ["user_id", 89]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:19.016117"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.016117"], ["user_id", 90]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:19.017028"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.017028"], ["user_id", 91]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:19.017936"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.017936"], ["user_id", 92]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:19.018915"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.018915"], ["user_id", 93]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:19.019911"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.019911"], ["user_id", 94]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:19.020885"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.020885"], ["user_id", 95]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:19.021778"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.021778"], ["user_id", 96]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:19.022603"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.022603"], ["user_id", 97]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:19.023459"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.023459"], ["user_id", 98]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:19.024347"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.024347"], ["user_id", 99]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:19.025189"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.025189"], ["user_id", 100]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:41:19.026106"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.026106"], ["user_id", 1]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:41:19.026996"], ["message_id", 2], ["updated_at", "2014-06-29 09:41:19.026996"], ["user_id", 3]]
+  [1m[35m (1.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/x/notifications
+Completed 302 Found in 195ms (ActiveRecord: 26.7ms)
+
+
+Started GET "/x/notifications" for 127.0.0.1 at 2014-06-29 09:41:19 +0900
+Processing by X::NotificationsController#index as HTML
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages"  WHERE (text IS NOT NULL)
+  Rendered x/notifications/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2014-06-29 09:41:21 +0900
+Processing by HomeController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.5ms)[0m  SELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC  [["user_id", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1mSELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (text IS NOT NULL)  ORDER BY id DESC[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered home/show.html.erb within layouts/top (4.5ms)
+Completed 200 OK in 129ms (Views: 122.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/messages/new?reply=3" for 127.0.0.1 at 2014-06-29 09:41:26 +0900
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered common/_error.html.erb (0.1ms)
+  Rendered messages/new.html.erb within layouts/top (2.6ms)
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at 2014-06-29 09:41:34 +0900
+Processing by MessagesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered common/_error.html.erb (0.0ms)
+  Rendered messages/new.html.erb within layouts/top (1.5ms)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/messages/new?reply=3" for 127.0.0.1 at 2014-06-29 09:42:05 +0900
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"3"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered common/_error.html.erb (0.1ms)
+  Rendered messages/new.html.erb within layouts/top (3.2ms)
+Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/messages/new?reply=3" for 127.0.0.1 at 2014-06-29 09:42:07 +0900
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"3"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered common/_error.html.erb (0.1ms)
+  Rendered messages/new.html.erb within layouts/top (2.5ms)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/messages/new?reply=3" for 127.0.0.1 at 2014-06-29 09:42:34 +0900
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"3"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered common/_error.html.erb (0.1ms)
+  Rendered messages/new.html.erb within layouts/top (2.1ms)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2014-06-29 09:42:35 +0900
+Processing by HomeController#show as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mMessage Load (0.7ms)[0m  [1mSELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC[0m  [["user_id", 1]]
+  [1m[35mMessage Load (0.4ms)[0m  SELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (text IS NOT NULL)  ORDER BY id DESC  [["user_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered home/show.html.erb within layouts/top (4.7ms)
+Completed 200 OK in 16ms (Views: 11.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at 2014-06-29 09:42:36 +0900
+Processing by MessagesController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered common/_error.html.erb (0.1ms)
+  Rendered messages/new.html.erb within layouts/top (3.7ms)
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/messages/new?reply=3" for 127.0.0.1 at 2014-06-29 09:43:16 +0900
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered common/_error.html.erb (0.1ms)
+  Rendered messages/new.html.erb within layouts/top (3.6ms)
+Completed 200 OK in 17ms (Views: 12.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2014-06-29 09:43:21 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PbGPy0Ac8+q7yQrQjwDwq+eJUV0mqLbOo+yEZnDyZw8=", "sender"=>"3", "message"=>{"message"=>#<ActionDispatch::Http::UploadedFile:0x007fce40f9afe0 @tempfile=#<Tempfile:/var/folders/dh/5rrpwh3s39j82nnsrv9fgbfm0000gp/T/RackMultipart20140629-42571-upv4gh>, @original_filename="honbun.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"message[message]\"; filename=\"honbun.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"送信"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "messages" ("created_at", "message", "owner_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 09:43:21.504555"], ["message", "61e64c75-bcbf-4001-b6ef-864320358e7f.jpeg"], ["owner_id", 1], ["updated_at", "2014-06-29 09:43:21.504555"]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 09:43:21.506858"], ["message_id", 3], ["updated_at", "2014-06-29 09:43:21.506858"], ["user_id", 3]]
+  [1m[35m (2.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/home
+Completed 302 Found in 1926ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2014-06-29 09:43:23 +0900
+Processing by HomeController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC  [["user_id", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (text IS NOT NULL)  ORDER BY id DESC[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered home/show.html.erb within layouts/top (3.4ms)
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/x/notifications" for 127.0.0.1 at 2014-06-29 09:43:26 +0900
+Processing by X::NotificationsController#index as HTML
+  [1m[36mAdmin Load (0.5ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.5ms)[0m  SELECT "messages".* FROM "messages"  WHERE (text IS NOT NULL)
+  Rendered x/notifications/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2014-06-29 09:43:33 +0900
+Processing by HomeController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC  [["user_id", 3]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (text IS NOT NULL)  ORDER BY id DESC[0m  [["user_id", 3]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered home/show.html.erb within layouts/top (3.2ms)
+Completed 200 OK in 12ms (Views: 8.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/receives" for 127.0.0.1 at 2014-06-29 09:43:34 +0900
+Processing by ReceivesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC  [["user_id", 3]]
+  Rendered receives/index.html.erb within layouts/top (2.3ms)
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/receives" for 127.0.0.1 at 2014-06-29 09:44:18 +0900
+Processing by ReceivesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC  [["user_id", 3]]
+  Rendered receives/index.html.erb within layouts/top (3.1ms)
+Completed 200 OK in 13ms (Views: 9.4ms | ActiveRecord: 0.8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/default.png"):
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+
+Started GET "/receives" for 127.0.0.1 at 2014-06-29 09:44:29 +0900
+Processing by ReceivesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.4ms)[0m  SELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC  [["user_id", 3]]
+  Rendered receives/index.html.erb within layouts/top (3.9ms)
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 0.9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/default.png"):
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+
+Started GET "/receives" for 127.0.0.1 at 2014-06-29 09:44:52 +0900
+Processing by ReceivesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC  [["user_id", 3]]
+  Rendered receives/index.html.erb within layouts/top (3.8ms)
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2014-06-29 09:46:11 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#show as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mMessage Load (0.7ms)[0m  [1mSELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (message IS NOT NULL)  ORDER BY id DESC[0m  [["user_id", 1]]
+  [1m[35mMessage Load (0.4ms)[0m  SELECT "messages".* FROM "messages" INNER JOIN "senders" ON "messages"."id" = "senders"."message_id" WHERE "senders"."user_id" = $1 AND (text IS NOT NULL)  ORDER BY id DESC  [["user_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered home/show.html.erb within layouts/top (19.7ms)
+Completed 200 OK in 311ms (Views: 168.1ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 09:46:22 +0900
+Processing by GuidesController#show as HTML
+  Rendered guides/show.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 16ms
+
+NoMethodError - undefined method `email' for nil:NilClass:
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb___3810402858655520705_70253549369360'
+  actionview (4.1.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.0) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:67:in `render_with_layout'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.0) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.0) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70253549636360/variables" for 127.0.0.1 at 2014-06-29 09:46:22 +0900
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 09:46:45 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.1ms)
+Completed 200 OK in 26ms (Views: 8.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 09:48:09 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.4ms)
+Completed 200 OK in 56ms (Views: 37.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 09:51:22 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.1ms)
+Completed 200 OK in 142ms (Views: 138.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 09:52:14 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.1ms)
+Completed 200 OK in 39ms (Views: 36.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 09:53:03 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.0ms)
+Completed 200 OK in 39ms (Views: 37.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 09:54:03 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.0ms)
+Completed 200 OK in 162ms (Views: 160.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 09:54:17 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.1ms)
+Completed 200 OK in 34ms (Views: 31.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 09:54:26 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.0ms)
+Completed 200 OK in 127ms (Views: 124.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 09:54:51 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.0ms)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 09:55:04 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.1ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 09:55:17 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.0ms)
+Completed 200 OK in 126ms (Views: 123.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 09:57:06 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.4ms)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 09:57:52 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.0ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 09:58:32 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.0ms)
+Completed 200 OK in 135ms (Views: 132.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 09:58:56 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.1ms)
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:00:01 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.1ms)
+Completed 200 OK in 135ms (Views: 133.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:00:32 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.0ms)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:01:47 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (12.2ms)
+Completed 500 Internal Server Error in 16ms
+
+NoMethodError - undefined method `image' for #<#<Class:0x007fca59fe80a0>:0x007fca5a261480>:
+  app/views/guides/show.html.erb:2:in `_app_views_guides_show_html_erb__493731001506563049_70253536284920'
+  actionview (4.1.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.0) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.0) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.0) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70253536615360/variables" for 127.0.0.1 at 2014-06-29 10:01:47 +0900
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:01:53 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.9ms)
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:02:32 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.7ms)
+Completed 200 OK in 133ms (Views: 130.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:03:23 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.8ms)
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:04:03 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.8ms)
+Completed 200 OK in 140ms (Views: 137.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at 2014-06-29 10:04:06 +0900
+Processing by MessagesController#new as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered common/_error.html.erb (2.7ms)
+  Rendered messages/new.html.erb within layouts/top (21.3ms)
+Completed 200 OK in 50ms (Views: 32.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:06:50 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (1.0ms)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:07:10 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.7ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:07:44 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (1.6ms)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:08:22 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.7ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:08:37 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.7ms)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:08:49 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.7ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:09:46 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.7ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:09:52 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.3ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:10:02 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (1.2ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/x/notifications" for 127.0.0.1 at 2014-06-29 10:10:50 +0900
+Processing by X::NotificationsController#index as HTML
+  [1m[35mAdmin Load (0.6ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mMessage Load (0.4ms)[0m  [1mSELECT "messages".* FROM "messages"  WHERE (text IS NOT NULL)[0m
+  Rendered x/notifications/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 35ms (Views: 15.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/x/notifications" for 127.0.0.1 at 2014-06-29 10:11:21 +0900
+Processing by X::NotificationsController#index as HTML
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages"  WHERE (text IS NOT NULL)[0m
+  Rendered x/notifications/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/x/notifications" for 127.0.0.1 at 2014-06-29 10:12:07 +0900
+Processing by X::NotificationsController#index as HTML
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages"  WHERE (text IS NOT NULL)[0m
+  Rendered x/notifications/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/x/notifications" for 127.0.0.1 at 2014-06-29 10:12:26 +0900
+Processing by X::NotificationsController#index as HTML
+  [1m[35mAdmin Load (0.5ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mMessage Load (0.4ms)[0m  [1mSELECT "messages".* FROM "messages"  WHERE (text IS NOT NULL)[0m
+  Rendered x/notifications/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/x/notifications" for 127.0.0.1 at 2014-06-29 10:13:01 +0900
+Processing by X::NotificationsController#index as HTML
+  [1m[35mAdmin Load (0.6ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mMessage Load (0.4ms)[0m  [1mSELECT "messages".* FROM "messages"  WHERE (text IS NOT NULL)[0m
+  Rendered x/notifications/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/x/notifications" for 127.0.0.1 at 2014-06-29 10:13:32 +0900
+Processing by X::NotificationsController#index as HTML
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mMessage Load (0.4ms)[0m  [1mSELECT "messages".* FROM "messages"  WHERE (text IS NOT NULL)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered x/notifications/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/x/notifications" for 127.0.0.1 at 2014-06-29 10:13:41 +0900
+Processing by X::NotificationsController#index as HTML
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages"  WHERE (text IS NOT NULL)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered x/notifications/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/x/notifications/new" for 127.0.0.1 at 2014-06-29 10:13:43 +0900
+Processing by X::NotificationsController#new as HTML
+  [1m[35mAdmin Load (0.5ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+  Rendered common/_error.html.erb (0.1ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users"   ORDER BY "users"."id" ASC[0m
+  Rendered x/notifications/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 27ms (Views: 23.6ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/x/notifications" for 127.0.0.1 at 2014-06-29 10:13:50 +0900
+Processing by X::NotificationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MCwn/4Uud0EEjn1zMw93o/NBiM7vp87Mn/JiaM4fq7A=", "message"=>{"text"=>"皆さんお元気ですか"}, "reply_to"=>"", "commit"=>"登録"}
+  [1m[35mAdmin Load (0.5ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 4ms
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=:
+  activerecord (4.1.0) lib/active_record/relation/finder_methods.rb:320:in `raise_record_not_found_exception!'
+  activerecord (4.1.0) lib/active_record/relation/finder_methods.rb:420:in `find_one'
+  activerecord (4.1.0) lib/active_record/relation/finder_methods.rb:404:in `find_with_ids'
+  activerecord (4.1.0) lib/active_record/relation/finder_methods.rb:68:in `find'
+  activerecord (4.1.0) lib/active_record/querying.rb:3:in `find'
+  app/controllers/x/notifications_controller.rb:18:in `create'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70253550379660/variables" for 127.0.0.1 at 2014-06-29 10:13:50 +0900
+
+
+Started GET "/x/notifications/new" for 127.0.0.1 at 2014-06-29 10:14:31 +0900
+Processing by X::NotificationsController#new as HTML
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+  Rendered common/_error.html.erb (0.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"   ORDER BY "users"."id" ASC[0m
+  Rendered x/notifications/new.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 73ms (Views: 42.9ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/x/notifications" for 127.0.0.1 at 2014-06-29 10:14:38 +0900
+Processing by X::NotificationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MCwn/4Uud0EEjn1zMw93o/NBiM7vp87Mn/JiaM4fq7A=", "message"=>{"text"=>"皆さんお元気ですか？"}, "reply_to"=>"", "commit"=>"登録"}
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "messages" ("created_at", "text", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.301662"], ["text", "皆さんお元気ですか？"], ["updated_at", "2014-06-29 10:14:38.301662"]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.304369"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.304369"], ["user_id", 2]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.306564"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.306564"], ["user_id", 4]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.308160"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.308160"], ["user_id", 5]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.309685"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.309685"], ["user_id", 6]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.311445"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.311445"], ["user_id", 7]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.313743"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.313743"], ["user_id", 8]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.315407"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.315407"], ["user_id", 9]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.316703"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.316703"], ["user_id", 10]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.317979"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.317979"], ["user_id", 11]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.319315"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.319315"], ["user_id", 12]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.320866"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.320866"], ["user_id", 13]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.322548"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.322548"], ["user_id", 14]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.324086"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.324086"], ["user_id", 15]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.330646"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.330646"], ["user_id", 16]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.331914"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.331914"], ["user_id", 17]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.332957"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.332957"], ["user_id", 18]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.333919"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.333919"], ["user_id", 19]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.334950"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.334950"], ["user_id", 20]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.335877"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.335877"], ["user_id", 21]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.336888"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.336888"], ["user_id", 22]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.337800"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.337800"], ["user_id", 23]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.338801"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.338801"], ["user_id", 24]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.339720"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.339720"], ["user_id", 25]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.340726"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.340726"], ["user_id", 26]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.341643"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.341643"], ["user_id", 27]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.342650"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.342650"], ["user_id", 28]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.343571"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.343571"], ["user_id", 29]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.344591"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.344591"], ["user_id", 30]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.345713"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.345713"], ["user_id", 31]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.346774"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.346774"], ["user_id", 32]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.348200"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.348200"], ["user_id", 33]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.349629"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.349629"], ["user_id", 34]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.350653"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.350653"], ["user_id", 35]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.351583"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.351583"], ["user_id", 36]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.352513"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.352513"], ["user_id", 37]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.353846"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.353846"], ["user_id", 38]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.354986"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.354986"], ["user_id", 39]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.355936"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.355936"], ["user_id", 40]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.356962"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.356962"], ["user_id", 41]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.357962"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.357962"], ["user_id", 42]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.358918"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.358918"], ["user_id", 43]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.359825"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.359825"], ["user_id", 44]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.361249"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.361249"], ["user_id", 45]]
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.362982"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.362982"], ["user_id", 46]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.364797"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.364797"], ["user_id", 47]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.365956"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.365956"], ["user_id", 48]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.366916"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.366916"], ["user_id", 49]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.367965"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.367965"], ["user_id", 50]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.374579"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.374579"], ["user_id", 51]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.375838"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.375838"], ["user_id", 52]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.376749"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.376749"], ["user_id", 53]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.377674"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.377674"], ["user_id", 54]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.378609"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.378609"], ["user_id", 55]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.379657"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.379657"], ["user_id", 56]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.380587"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.380587"], ["user_id", 57]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.381595"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.381595"], ["user_id", 58]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.382550"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.382550"], ["user_id", 59]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.383408"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.383408"], ["user_id", 60]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.384372"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.384372"], ["user_id", 61]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.385386"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.385386"], ["user_id", 62]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.386321"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.386321"], ["user_id", 63]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.387347"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.387347"], ["user_id", 64]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.388289"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.388289"], ["user_id", 65]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.389331"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.389331"], ["user_id", 66]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.390262"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.390262"], ["user_id", 67]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.391263"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.391263"], ["user_id", 68]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.392134"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.392134"], ["user_id", 69]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.392989"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.392989"], ["user_id", 70]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.393825"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.393825"], ["user_id", 71]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.394812"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.394812"], ["user_id", 72]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.396204"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.396204"], ["user_id", 73]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.397758"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.397758"], ["user_id", 74]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.399540"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.399540"], ["user_id", 75]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.400699"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.400699"], ["user_id", 76]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.401664"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.401664"], ["user_id", 77]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.402696"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.402696"], ["user_id", 78]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.403691"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.403691"], ["user_id", 79]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.404587"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.404587"], ["user_id", 80]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.405443"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.405443"], ["user_id", 81]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.406278"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.406278"], ["user_id", 82]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.407113"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.407113"], ["user_id", 83]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.408140"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.408140"], ["user_id", 84]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.409344"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.409344"], ["user_id", 85]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.410884"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.410884"], ["user_id", 86]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.412584"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.412584"], ["user_id", 87]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.419370"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.419370"], ["user_id", 88]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.420659"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.420659"], ["user_id", 89]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.421702"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.421702"], ["user_id", 90]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.422589"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.422589"], ["user_id", 91]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.423436"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.423436"], ["user_id", 92]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.424360"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.424360"], ["user_id", 93]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.425303"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.425303"], ["user_id", 94]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.426232"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.426232"], ["user_id", 95]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.427253"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.427253"], ["user_id", 96]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.428203"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.428203"], ["user_id", 97]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.429265"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.429265"], ["user_id", 98]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.430239"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.430239"], ["user_id", 99]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.431155"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.431155"], ["user_id", 100]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-06-29 10:14:38.432166"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.432166"], ["user_id", 1]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "senders" ("created_at", "message_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-06-29 10:14:38.433081"], ["message_id", 4], ["updated_at", "2014-06-29 10:14:38.433081"], ["user_id", 3]]
+  [1m[35m (2.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/x/notifications
+Completed 302 Found in 234ms (ActiveRecord: 29.5ms)
+
+
+Started GET "/x/notifications" for 127.0.0.1 at 2014-06-29 10:14:38 +0900
+Processing by X::NotificationsController#index as HTML
+  [1m[36mAdmin Load (0.5ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages"  WHERE (text IS NOT NULL)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered x/notifications/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/x/notifications" for 127.0.0.1 at 2014-06-29 10:15:00 +0900
+Processing by X::NotificationsController#index as HTML
+  [1m[35mAdmin Load (0.6ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT "messages".* FROM "messages"  WHERE (text IS NOT NULL)  ORDER BY id DESC[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered x/notifications/index.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 63ms (Views: 34.2ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/x/messages" for 127.0.0.1 at 2014-06-29 10:15:06 +0900
+Processing by X::MessagesController#index as HTML
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.4ms)[0m  SELECT "messages".* FROM "messages"  WHERE (message IS NOT NULL)  ORDER BY id DESC
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "senders" ON "users"."id" = "senders"."user_id" WHERE "senders"."message_id" = $1[0m  [["message_id", 3]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" INNER JOIN "senders" ON "users"."id" = "senders"."user_id" WHERE "senders"."message_id" = $1  [["message_id", 1]]
+  Rendered x/messages/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 23ms (Views: 18.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/x/users" for 127.0.0.1 at 2014-06-29 10:15:08 +0900
+Processing by X::UsersController#index as HTML
+  [1m[36mAdmin Load (0.6ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (1.4ms)[0m  SELECT DISTINCT "users".* FROM "users"   ORDER BY "users"."id" ASC
+  Rendered x/users/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 23ms (Views: 18.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/x/users?utf8=%E2%9C%93&q%5Bname_or_address_or_group_cont%5D=%E8%B0%B7%E6%B4%A5%E7%94%B0" for 127.0.0.1 at 2014-06-29 10:15:23 +0900
+Processing by X::UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"name_or_address_or_group_cont"=>"谷津田"}}
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (1.2ms)[0m  SELECT DISTINCT "users".* FROM "users"  WHERE ((("users"."name" ILIKE '%谷津田%' OR "users"."address" ILIKE '%谷津田%') OR "users"."group" ILIKE '%谷津田%'))  ORDER BY "users"."id" ASC
+  Rendered x/users/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 16ms (Views: 12.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/x/messages" for 127.0.0.1 at 2014-06-29 10:15:25 +0900
+Processing by X::MessagesController#index as HTML
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages"  WHERE (message IS NOT NULL)  ORDER BY id DESC
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "senders" ON "users"."id" = "senders"."user_id" WHERE "senders"."message_id" = $1[0m  [["message_id", 3]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" INNER JOIN "senders" ON "users"."id" = "senders"."user_id" WHERE "senders"."message_id" = $1  [["message_id", 1]]
+  Rendered x/messages/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:20:28 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.8ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/x/messages" for 127.0.0.1 at 2014-06-29 10:20:31 +0900
+Processing by X::MessagesController#index as HTML
+  [1m[35mAdmin Load (0.5ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mMessage Load (0.4ms)[0m  [1mSELECT "messages".* FROM "messages"  WHERE (message IS NOT NULL)  ORDER BY id DESC[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" INNER JOIN "senders" ON "users"."id" = "senders"."user_id" WHERE "senders"."message_id" = $1  [["message_id", 3]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "senders" ON "users"."id" = "senders"."user_id" WHERE "senders"."message_id" = $1[0m  [["message_id", 1]]
+  Rendered x/messages/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 18ms (Views: 12.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/x/notifications" for 127.0.0.1 at 2014-06-29 10:21:35 +0900
+Processing by X::NotificationsController#index as HTML
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  "admins".* FROM "admins"  WHERE "admins"."id" = 1  ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT "messages".* FROM "messages"  WHERE (text IS NOT NULL)  ORDER BY id DESC[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered x/notifications/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 17ms (Views: 13.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:28:20 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.3ms)
+Completed 200 OK in 133ms (Views: 131.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:29:21 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (5.8ms)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/guide11.png"):
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:29:25 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.5ms)
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/guide11.png"):
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jwako/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:29:31 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (1.3ms)
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:29:37 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.5ms)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:30:04 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (1.4ms)
+Completed 200 OK in 156ms (Views: 153.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:30:23 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.8ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 10:30:54 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (2.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.9ms)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 2.2ms)

@@ -18,7 +18,11 @@
       <tr>
         <td class="text-center"><%= message.id %></td>
         <td class="text-left"><%= message.owner.name %></td>
-        <td class="text-center"><%= image_tag(message.address.url, class: "img-responsive", width: "300px", alt: "message") %></td>
+        <td class="text-center">
+        <% if message.address.present? %>
+        <%= image_tag(message.address.url, class: "img-responsive", width: "300px", alt: "message") %>
+        <% end %>
+        </td>
         <td class="text-center"><%= message.created_at.strftime("%Y-%m-%d %H:%H") %></td>
         <td class="text-center">
         <%= link_to "宛先を紐付ける", edit_x_message_path(message), class: "btn btn-lg btn-block btn-primary" %>

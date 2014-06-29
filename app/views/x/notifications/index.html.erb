@@ -12,13 +12,15 @@
 	  	<br>
       <table class="table table-striped">
       <tr>
-        <th class="col-lg-6 text-center">メッセージ</th>
-        <th class="col-lg-2 text-center"></th>
+        <th class="col-lg-6 text-center">お知らせ内容</th>
+        <th class="col-lg-2 text-center">通知日時</th>
+        <th class="col-lg-6 text-center">返信先</th>
       </tr>
       <% @messages.each do |message| %>
       <tr>
         <td class="text-left"><%= message.text %></td>
         <td class="text-center"><%= message.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+        <td class="text-center"><%= message.reply_to.try(:name) %></td>
       </tr>
       <% end %>
       </table>

@@ -3,7 +3,7 @@ class X::NotificationsController < ApplicationController
   before_filter :authenticate_admin!
   
   def index
-    @messages = Message.notifications
+    @messages = Message.notifications.order("id DESC")
   end
 
   def show
@@ -15,7 +15,7 @@ class X::NotificationsController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    @message.reply_to = User.find(params[:reply_to]) if params[:reply_to]
+    @message.reply_to = User.find(params[:reply_to]) if params[:reply_to].present?
     @message.users << User.all
     if @message.save
       redirect_to x_notifications_path

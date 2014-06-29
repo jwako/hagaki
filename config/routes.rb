@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resource :home, controller: :home, only: :show
   resources :messages, only: [:index, :show, :new, :create]
   resources :receives, only: :index
-  
+  resource :guides, only: :show
+
   devise_for :admins
   namespace :x do
     resource :home, controller: :home, only: :show

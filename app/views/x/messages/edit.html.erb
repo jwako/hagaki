@@ -7,7 +7,7 @@
     <div class="box-body">
     	<div class="row">
 	    	<div class="col-md-4">
-	    	<p><%= image_tag(@message.address.url, class: "img-responsive", alt: "message", width: "300px") %></p>
+	    	<p><%= image_tag(@message.address.try(:url), class: "img-responsive", alt: "message", width: "300px") %></p>
 	  	  <p><%= image_tag(@message.message.url, class: "img-responsive", alt: "message", width: "300px") %></p>
 	  	  </div>
 	  	  <div class="col-md-8">

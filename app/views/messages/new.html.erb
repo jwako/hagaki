@@ -6,12 +6,13 @@
       <%= render "common/error", object: @message %>
       <% if @sender %>
       <%= hidden_field_tag :sender, @sender.id %>
-      <% end %>
+      <% else %>
       <div class="form-group">
         <span class="btn btn-block btn-success btn-lg btn-file">
           宛先を撮影する <%= f.file_field :address, accept: "image/*", capture: "camera" %>
         </span>
       </div>
+      <% end %>
       <div class="form-group">
         <span class="btn btn-block btn-success btn-lg btn-file">
           本文を撮影する <%= f.file_field :message, accept: "image/*", capture: "camera" %>

@@ -22,3 +22,17 @@
 .img-responsive {
 	margin: 0 auto;
 }
+
+#guide1 {
+	background: url("guide1.png") left top no-repeat !important;
+	height: 1920px;
+	width: 1000px;
+}
+
+#guide1 .top-100 {
+	margin-top: 100px;
+}
+
+#guide1 .left-100 {
+	margin-left: 100px;
+}

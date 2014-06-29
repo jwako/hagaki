@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    return home_path if resource.is_a?(User)
+    return guides_path if resource.is_a?(User)
     return x_home_path if resource.is_a?(Admin)
   end
 

@@ -5,7 +5,9 @@
     <h3 class="box-title">メッセージ</h3>
     </div><!-- /.box-header -->
     <div class="box-body">
+    <% if message.address.present? %>
 	<p><%= image_tag(@message.address.url, class: "img-responsive text-center", alt: "message") %></p>
+    <% end %>
     <p><%= image_tag(@message.message.url, class: "img-responsive text-center", alt: "message") %></p>
     </div><!-- /.box-body -->
     <div class="box-footer clearfix">
