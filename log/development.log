@@ -20730,3 +20730,17 @@ Processing by GuidesController#show as HTML
   [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
   Rendered guides/show.html.erb within layouts/top (0.4ms)
 Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 14:38:12 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.1ms)
+Completed 200 OK in 163ms (Views: 160.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 14:38:13 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.1ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.4ms)

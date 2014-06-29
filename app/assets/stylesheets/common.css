@@ -23,9 +23,10 @@
 	margin: 0 auto;
 }
 
-.component {
+/*.component {
 	height: 1692px;
-}
+}*/
+
 #guide1 {
 	background: url("guide1.png");
   -webkit-background-size: cover;
