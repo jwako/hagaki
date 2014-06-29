@@ -6,10 +6,11 @@
     </div><!-- /.box-header -->
     <div class="box-body">
     	<div class="row">
-	    	<div class="col-md-6">
-	  	  <%= image_tag(@message.message.url, class: "img-responsive", alt: "message") %>
+	    	<div class="col-md-4">
+	    	<p><%= image_tag(@message.address.url, class: "img-responsive", alt: "message", width: "300px") %></p>
+	  	  <p><%= image_tag(@message.message.url, class: "img-responsive", alt: "message", width: "300px") %></p>
 	  	  </div>
-	  	  <div class="col-md-6">
+	  	  <div class="col-md-8">
 	  	  	<div class="row">
 			  		<div class="col-md-12">
 							<%= search_form_for @q, url: edit_x_message_path(@message) do |f| %>

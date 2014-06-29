@@ -5,7 +5,8 @@
     <h3 class="box-title">メッセージ</h3>
     </div><!-- /.box-header -->
     <div class="box-body">
-	  	<%= image_tag(@message.message.url, class: "img-responsive text-center", alt: "message") %>
+	<p><%= image_tag(@message.address.url, class: "img-responsive text-center", alt: "message") %></p>
+    <p><%= image_tag(@message.message.url, class: "img-responsive text-center", alt: "message") %></p>
     </div><!-- /.box-body -->
     <div class="box-footer clearfix">
 	  	<%= link_to "このメッセージに返信する", new_x_notification_path, class: "btn btn-lg btn-block btn-primary" %>

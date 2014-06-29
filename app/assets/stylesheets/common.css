@@ -18,3 +18,7 @@
 	cursor: inherit;
 	display: block;
 }
+
+.img-responsive {
+	margin: 0 auto;
+}
