@@ -20849,3 +20849,10 @@ Processing by GuidesController#show as HTML
   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
   Rendered guides/show.html.erb within layouts/top (0.3ms)
 Completed 200 OK in 126ms (Views: 123.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 14:55:28 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.1ms)
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.6ms)
