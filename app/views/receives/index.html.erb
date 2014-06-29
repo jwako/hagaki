@@ -10,6 +10,7 @@
       <p><%= image_tag(message.address.url, class: "img-responsive", alt: "message") %></p>
       <% end %>
 	  	<p><%= image_tag(message.message.url, class: "img-responsive", alt: "message") %></p>
+      <p class="text-center font-big">[差出人] <%= message.owner.name %></p>
 	  	<br>
 	  	<%= link_to "このメッセージに返信する", new_message_path(owner: message.owner_id), class: "btn btn-lg btn-block btn-primary" %>
 	  <% end %>

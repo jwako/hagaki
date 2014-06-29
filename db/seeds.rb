@@ -97,4 +97,7 @@ prefecture = ['北海道','青森県','岩手県','宮城県','秋田県','山�
   )
 end
 
+@message = Message.new(text: "お悔やみ情報 田中 幸雄 (85歳) 谷津田", reply_to: User.find(3))
+@message.users << User.all
+@message.save
 

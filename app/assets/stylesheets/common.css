@@ -32,13 +32,6 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-/*	width: 1200px;
-	height: 1920px;
-	display:block;
-	-webkit-background-size: 1200px 1900px;
-	-moz-background-size: 1200px 1900px;
-	-o-background-size: 1200px 1900px;
-	-ms-background-size: 1200px 1900px;*/
 }
 #guide1 .button {
 	background: url("guide1_button_hover.png") no-repeat;
@@ -58,5 +51,9 @@
 }
 #guide1 .button a:hover {
 	background: none;
+}
+
+.font-big {
+	font-size: 24px;
 }
 

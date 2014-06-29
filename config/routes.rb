@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'tutorial/show'
+
   devise_for :users
   root :to => 'top#show'
   resource :top, controller: :top, only: :show
@@ -9,7 +11,8 @@ Rails.application.routes.draw do
   resource :guides, only: :show do
     get :start, on: :collection
   end
-
+  resource :tutorial, controller: :tutorial, only: :show
+  
   devise_for :admins
   namespace :x do
     resource :home, controller: :home, only: :show
