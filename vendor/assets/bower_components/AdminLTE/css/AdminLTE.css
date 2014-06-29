@@ -1826,7 +1826,7 @@ Component: timeline
 .btn:focus {
   outline: none;
 }
-.btn.btn-file {
+/*.btn.btn-file {
   position: relative;
   width: 120px;
   height: 35px;
@@ -1840,7 +1840,7 @@ Component: timeline
   position: absolute;
   top: -10px;
   cursor: pointer;
-}
+}*/
 .btn.btn-app {
   position: relative;
   padding: 15px 5px;

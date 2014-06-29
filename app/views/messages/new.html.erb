@@ -8,10 +8,14 @@
       <%= hidden_field_tag :sender, @sender.id %>
       <% end %>
       <div class="form-group">
-        <%= f.file_field :address, accept: "image/*", capture: "camera" %>
+        <span class="btn btn-block btn-success btn-lg btn-file">
+          宛先を撮影する <%= f.file_field :address, accept: "image/*", capture: "camera" %>
+        </span>
       </div>
       <div class="form-group">
-        <%= f.file_field :message, accept: "image/*", capture: "camera" %>
+        <span class="btn btn-block btn-success btn-lg btn-file">
+          本文を撮影する <%= f.file_field :message, accept: "image/*", capture: "camera" %>
+        </span>
       </div>
       <%= f.submit "送信", data: { disable_with: "送信中" }, class: "btn btn-lg btn-block btn-primary" %>
     <% end %>
