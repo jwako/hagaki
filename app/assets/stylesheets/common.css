@@ -37,10 +37,8 @@
 
 #guide1 {
 	background: url("guide1.png");
-  -webkit-background-size: 1692px 1200px;
-  background-size: 1692px 1200px;
-/*  -webkit-background-size: 1200px 1692px;
-  background-size: 1200px 1692px;*/
+  -webkit-background-size: 1000px 1492px;
+  background-size: 1000px 1492px;
 /*  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
