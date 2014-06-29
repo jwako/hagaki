@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
 
-  get 'tutorial/show'
-
   devise_for :users
   root :to => 'top#show'
   resource :top, controller: :top, only: :show
   resource :home, controller: :home, only: :show
   resources :messages, only: [:index, :show, :new, :create]
-  resources :receives, only: :index
+  resources :receives, only: [:index, :show] do
+    get :notify, on: :collection
+  end
   resource :guides, only: :show do
     get :start, on: :collection
   end
-  resource :tutorial, controller: :tutorial, only: :show
+  resource :tutorial, controller: :tutorial, only: :show do
+    get :confirm, on: :collection
+    get :complete, on: :collection
+  end
   
   devise_for :admins
   namespace :x do

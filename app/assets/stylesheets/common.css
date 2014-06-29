@@ -40,11 +40,10 @@
   -webkit-background-size: 800px 1128px;
   background-size: 800px 1128px;
 }
-
 #guide1 .button {
 	background: url("guide1_btn1_hover_Y1030.png") no-repeat;
 	margin-top: 680px;
-	margin-left: 82px;
+	margin-left: 90px;
 }
 #guide1 .button a {
 	display: block;
@@ -52,7 +51,7 @@
 	text-align: left;
 }
 #guide1 .button a span {
-	height: 140px;
+	height: 93px;
 	display: block;
 	text-indent: -9999px;
 }
@@ -60,3 +59,288 @@
 	background: none;
 }
 
+#guide2 {
+	background: url("guide2_bg.png") no-repeat;
+  -webkit-background-size: 800px 1128px;
+  background-size: 800px 1128px;
+}
+#guide2 .button {
+	background: url("guide2_btn1_hover_Y1030.png") no-repeat;
+	margin-top: 680px;
+	margin-left: 90px;
+}
+#guide2 .button a {
+	display: block;
+	background: url("guide2_btn1_Y1030.png") no-repeat;
+	text-align: left;
+}
+#guide2 .button a span {
+	height: 93px;
+	display: block;
+	text-indent: -9999px;
+}
+#guide2 .button a:hover {
+	background: none;
+}
+
+#guide3 {
+	background: url("guide3_bg.png") no-repeat;
+  -webkit-background-size: 800px 1128px;
+  background-size: 800px 1128px;
+}
+#guide3 .button {
+	background: url("guide3_btn1_hover_Y1030.png") no-repeat;
+	margin-top: 680px;
+	margin-left: 90px;
+}
+#guide3 .button a {
+	display: block;
+	background: url("guide3_btn1_Y1030.png") no-repeat;
+	text-align: left;
+}
+#guide3 .button a span {
+	height: 93px;
+	display: block;
+	text-indent: -9999px;
+}
+#guide3 .button a:hover {
+	background: none;
+}
+
+#guide4 {
+	background: url("guide4_bg.png") no-repeat;
+  -webkit-background-size: 800px 1128px;
+  background-size: 800px 1128px;
+}
+#guide4 .button {
+	background: url("guide4_btn1_hover_Y813.png") no-repeat;
+	margin-top: 480px;
+	margin-left: 90px;
+}
+#guide4 .button a {
+	display: block;
+	background: url("guide4_btn1_Y813.png") no-repeat;
+	text-align: left;
+}
+#guide4 .button a span {
+	height: 93px;
+	display: block;
+	text-indent: -9999px;
+}
+#guide4 .button a:hover {
+	background: none;
+}
+
+#guide5 {
+	background: url("guide5_bg.png") no-repeat;
+  -webkit-background-size: 800px 1128px;
+  background-size: 800px 1128px;
+}
+#guide5 .button {
+	background: url("guide5_btn1_hover_Y1525.png") no-repeat;
+	margin-top: 30px;
+	margin-left: 90px;
+}
+#guide5 .button a {
+	display: block;
+	background: url("guide5_btn1_Y1525.png") no-repeat;
+	text-align: left;
+}
+#guide5 .button a span {
+	height: 93px;
+	display: block;
+	text-indent: -9999px;
+}
+#guide5 .button a:hover {
+	background: none;
+}
+
+#guide6 {
+	background: url("guide6_bg.png") no-repeat;
+  -webkit-background-size: 800px 1128px;
+  background-size: 800px 1128px;
+}
+#guide6 .button {
+	background: url("guide6_btn1_hover_Y813.png") no-repeat;
+	margin-top: 480px;
+	margin-left: 90px;
+}
+#guide6 .button a {
+	display: block;
+	background: url("guide6_btn1_Y813.png") no-repeat;
+	text-align: left;
+}
+#guide6 .button a span {
+	height: 93px;
+	display: block;
+	text-indent: -9999px;
+}
+#guide6 .button a:hover {
+	background: none;
+}
+
+#guide7 {
+	background: url("guide7_bg.png") no-repeat;
+  -webkit-background-size: 800px 1128px;
+  background-size: 800px 1128px;
+}
+#guide7 .button1 {
+	background: url("guide7_btn2_hover_Y842.png") no-repeat;
+	margin-top: 420px;
+	margin-left: 90px;
+}
+#guide7 .button1 a {
+	display: block;
+	background: url("guide7_btn2_Y842.png") no-repeat;
+	text-align: left;
+}
+#guide7 .button1 a span {
+	height: 93px;
+	display: block;
+	text-indent: -9999px;
+}
+#guide7 .button1 a:hover {
+	background: none;
+}
+
+#guide7 .button2 {
+	background: url("guide7_btn1_hover_Y670.png") no-repeat;
+	margin-top: 20px;
+	margin-left: 90px;
+}
+#guide7 .button2 a {
+	display: block;
+	background: url("guide7_btn1_Y670.png") no-repeat;
+	text-align: left;
+}
+#guide7 .button2 a span {
+	height: 93px;
+	display: block;
+	text-indent: -9999px;
+}
+#guide7 .button2 a:hover {
+	background: none;
+}
+
+#guide7 .button3 {
+	background: url("guide7_btn3_hover_Y1014.png") no-repeat;
+	margin-top: 20px;
+	margin-left: 90px;
+}
+#guide7 .button3 a {
+	display: block;
+	background: url("guide7_btn3_Y1014.png") no-repeat;
+	text-align: left;
+}
+#guide7 .button3 a span {
+	height: 93px;
+	display: block;
+	text-indent: -9999px;
+}
+#guide7 .button3 a:hover {
+	background: none;
+}
+
+#guide8 {
+	background: url("guide8_bg.png") no-repeat;
+  -webkit-background-size: 800px 1128px;
+  background-size: 800px 1128px;
+}
+#guide8 .button1 {
+	background: url("guide8_btn1_hover_Y373.png") no-repeat;
+	margin-top: 280px;
+	margin-left: 90px;
+}
+#guide8 .button1 a {
+	display: block;
+	background: url("guide8_btn1_Y373.png") no-repeat;
+	text-align: left;
+}
+#guide8 .button1 a span {
+	height: 93px;
+	display: block;
+	text-indent: -9999px;
+}
+#guide8 .button1 a:hover {
+	background: none;
+}
+#guide8 .button2 {
+	background: url("guide8_btn2_hover_Y584.png") no-repeat;
+	margin-top: 20px;
+	margin-left: 90px;
+}
+#guide8 .button2 a {
+	display: block;
+	background: url("guide8_btn2_Y584.png") no-repeat;
+	text-align: left;
+}
+#guide8 .button2 a span {
+	height: 93px;
+	display: block;
+	text-indent: -9999px;
+}
+#guide8 .button2 a:hover {
+	background: none;
+}
+
+#guide8 .button3 {
+	background: url("guide8_btn3_hover_Y796.png") no-repeat;
+	margin-top: 20px;
+	margin-left: 90px;
+}
+#guide8 .button3 a {
+	display: block;
+	background: url("guide8_btn3_Y796.png") no-repeat;
+	text-align: left;
+}
+#guide8 .button3 a span {
+	height: 93px;
+	display: block;
+	text-indent: -9999px;
+}
+#guide8 .button3 a:hover {
+	background: none;
+}
+
+#guide8 .button4 {
+	background: url("guide8_btn4_hover_Y1007.png") no-repeat;
+	margin-top: 20px;
+	margin-left: 90px;
+}
+#guide8 .button4 a {
+	display: block;
+	background: url("guide8_btn4_Y1007.png") no-repeat;
+	text-align: left;
+}
+#guide8 .button4 a span {
+	height: 93px;
+	display: block;
+	text-indent: -9999px;
+}
+#guide8 .button4 a:hover {
+	background: none;
+}
+
+#guide9 {
+	background: url("guide9_bg.png") no-repeat;
+  -webkit-background-size: 800px 1128px;
+  background-size: 800px 1128px;
+}
+#guide9 .button1 {
+	background: url("guide7_btn2_hover_Y842.png") no-repeat;
+	margin-top: 420px;
+	margin-left: 90px;
+}
+#guide9 .button1 a {
+	display: block;
+	background: url("guide7_btn2_Y842.png") no-repeat;
+	text-align: left;
+}
+#guide9 .button1 a span {
+	height: 93px;
+	display: block;
+	text-indent: -9999px;
+}
+#guide9 .button1 a:hover {
+	background: none;
+}

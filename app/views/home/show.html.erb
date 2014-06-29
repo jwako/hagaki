@@ -1,48 +1,15 @@
- <div class="row">
-  <div class="col-md-12">
-    <div class="box">
-      <div class="box-body">
-      <% unless @messages.blank? %>
-        <%= link_to "あなたへの手紙を確認する", receives_path, class: "btn btn-lg btn-block btn-danger" %>
-      <% end %>
-      </div>
-    </div>
-
-    <div class="box">
-    <div class="box-header">
-    <h1>浪江町からのお知らせ</h1>
-    </div><!-- /.box-header -->
-    <div class="box-body">
-      <% @notifications.each do |note| %>
-      <div class="row">
-        <div class="col-lg-8">
-          <p class="font-big"><%= note.text %></p>
-        </div>
-        <div class="col-lg-4">
-          <p class="font-big"><%= note.created_at.strftime("%Y-%d-%m %H:%M") %></p>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-lg-12">
-          <%= link_to "このお知らせに返信する", new_message_path(reply: note.reply_to), class: "btn btn-lg btn-block btn-info" %>
-        </div>
-      </div>
-      <hr>
-      <% end %>
-    </div><!-- /.box-body -->
-    </div>
-    
-    <div class="box">
-      <div class="box-body">
-        <%= link_to "新しく手紙を送信する", new_message_path, class: "btn btn-lg btn-block btn-primary" %>
-      </div>
-    </div>
-
-    <div class="box">
-      <div class="box-body">
-        <%= link_to "ログアウト", destroy_user_session_path, { method: :delete, class: "btn btn-lg btn-block btn-default" } %>
-      </div>
-    </div>
+<div id="guide7" class="guide-component">
+　　　　　　　　　　　
+  <div class="button1">
+    <a href="/receives"><span>サンプルテキスト</span></a>
   </div>
+
+  <div class="button2">
+    <a href="/messages/new"><span>サンプルテキスト</span></a>
+  </div>
+
+  <div class="button3">
+    <a href="/receives/notify"><span>サンプルテキスト</span></a>
+  </div>
+
 </div>

@@ -12,14 +12,21 @@ class MessagesController < ApplicationController
   def new
   	@message = Message.new
     @sender = User.find(params[:owner]) if params[:owner]
-    @sender = User.find(params[:reply]) if params[:reply]
+    if params[:reply]
+      @sender = User.find(params[:reply])
+      @reply = true
+    end
   end
 
   def create
   	@message = current_user.own_messages.new(message_params)
     @message.users << User.find(params[:sender]) if params[:sender]
   	if @message.save
-  		redirect_to home_path
+      if params[:reply].present?
+    		redirect_to confirm_tutorial_path(m: @message.id)
+      else
+        redirect_to home_path
+      end
   	else
   		render :new
   	end

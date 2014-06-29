@@ -6,4 +6,11 @@ class ReceivesController < ApplicationController
   	@messages = current_user.messages.mails.order("id DESC")
   end
 
+  def show
+  	@message = current_user.messages.find(params[:id])
+  end
+
+  def notify
+  end
+  
 end
