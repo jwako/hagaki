@@ -344,3 +344,27 @@
 #guide9 .button1 a:hover {
 	background: none;
 }
+
+#guide10 {
+	background: url("guide10_bg.png") no-repeat;
+  -webkit-background-size: 800px 1128px;
+  background-size: 800px 1128px;
+}
+#guide10 .button {
+	background: url("guide10_btn3_hover_Y1014.png") no-repeat;
+	margin-top: 420px;
+	margin-left: 90px;
+}
+#guide10 .button a {
+	display: block;
+	background: url("guide10_btn3_Y1014.png") no-repeat;
+	text-align: left;
+}
+#guide10 .button a span {
+	height: 93px;
+	display: block;
+	text-indent: -9999px;
+}
+#guide10 .buttonn a:hover {
+	background: none;
+}

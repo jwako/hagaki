@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :messages, only: [:index, :show, :new, :create]
   resources :receives, only: [:index, :show] do
     get :notify, on: :collection
+    get :list, on: :collection
   end
   resource :guides, only: :show do
     get :start, on: :collection

@@ -13,4 +13,8 @@ class ReceivesController < ApplicationController
   def notify
   end
   
+  def list
+    @notifications = current_user.messages.notifications.order("id DESC")
+  end
+
 end
