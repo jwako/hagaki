@@ -23,6 +23,9 @@
 	margin: 0 auto;
 }
 
+.component {
+	height: 1920px;
+}
 #guide1 {
 	background: url("guide1.png");
   -webkit-background-size: cover;
@@ -39,8 +42,8 @@
 }
 #guide1 .button {
 	background: url("guide1_button_hover.png") no-repeat;
-	margin-top: 500px;
-	margin-left: 75px;
+	margin-top: 1156px;
+	margin-left: 300px;
 }
 #guide1 .button a {
 	width: 910px;
