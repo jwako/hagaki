@@ -32,13 +32,13 @@
 }
 
 .guide-component {
-	height: 1292px;
+	height: 1114px;
 }
 
 #guide1 {
 	background: url("guide1.png");
-  -webkit-background-size: 800px 1292px;
-  background-size: 800px 1292px;
+  -webkit-background-size: 790px 1114px;
+  background-size: 790px 1114px;
 /*  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -47,7 +47,7 @@
 
 #guide1 .button {
 	background: url("guide1_btn1_hover_Y1030.png") no-repeat;
-	margin-top: 1030px;
+	margin-top: 400px;
 	margin-left: 130px;
 }
 #guide1 .button a {
