@@ -28,6 +28,10 @@
 	width: 1920px;
 	height: 1200px;
 	display:block;
+	-webkit-background-size: 1920px 1200px;
+	-moz-background-size: 1920px 1200px;
+	-o-background-size: 1920px 1200px;
+	-ms-background-size: 1920px 1200px;
 }
 #guide1 .button {
 	background: url("guide1_button_hover.png") no-repeat;
