@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resource :home, controller: :home, only: :show
   resources :messages, only: [:index, :show, :new, :create]
   resources :receives, only: :index
-  resource :guides, only: :show
+  resource :guides, only: :show do
+    get :start, on: :collection
+  end
 
   devise_for :admins
   namespace :x do

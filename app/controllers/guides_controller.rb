@@ -5,4 +5,7 @@ class GuidesController < ApplicationController
   def show
   end
 
+  def start
+  end
+  
 end

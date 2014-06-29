@@ -25,8 +25,8 @@
 
 #guide1 {
 	background: url("guide1.png") left top no-repeat !important;
-	height: 846px;
-	width: 600px;
+	width: 1920px;
+	height: 1200px;
 	display:block;
 }
 #guide1 .button {
@@ -35,13 +35,13 @@
 	margin-left: 75px;
 }
 #guide1 .button a {
-	width: 455px;
+	width: 910px;
 	display: block;
 	background: url("guide1_button.png") no-repeat;
 	text-align: left;
 }
 #guide1 .button a span {
-	height: 68px;
+	height: 135px;
 	display: block;
 	text-indent: -9999px;
 }

@@ -2,7 +2,7 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 Admin.create(
-	email: 'junwako@gmail.com',
+	email: 'admin@namie.jp',
 	password: '11111111'
 )
 
@@ -52,37 +52,37 @@ prefecture = ['北海道','青森県','岩手県','宮城県','秋田県','山�
 
   if i == 1
     u = User.create(
-    name: "佐藤 一郎",
-    password: '11111111',
-    email: "s#{i}@namie.jp",
-    zipcode: "9791751",
-    address: "福島県双葉郡浪江町#{group} 1-#{i}",
-    old_address: "浪江町#{group} 100-#{i}",
-    group: group
+      name: "佐藤 一郎",
+      password: '11111111',
+      email: "s#{i}@namie.jp",
+      zipcode: "9791751",
+      address: "福島県双葉郡浪江町昼曽根 100",
+      address: "浪江町谷昼曽根 100",
+      group: "昼曽根"
     )
   end
 
   if i == 2
     u = User.create(
-    name: "田中 ミキコ",
-    password: '11111111',
-    email: "s#{i}@namie.jp",
-    zipcode: "9791751",
-    address: "福島県双葉郡浪江町谷津田 1-2",
-    old_address: "浪江町谷津田 100-2",
-    group: "谷津田"
+      name: "田中 幸雄",
+      password: '11111111',
+      email: "s#{i}@namie.jp",
+      zipcode: "9791751",
+      address: "福島県双葉郡浪江町谷津田宇谷津田 88",
+      old_address: "浪江町谷津田 100-2",
+      group: "谷津田"
     )
   end
 
   if i == 3
     u = User.create(
-    name: "田中 幸雄",
-    password: '11111111',
-    email: "s#{i}@namie.jp",
-    zipcode: "9791751",
-    address: "福島県双葉郡浪江町谷津田 1-2",
-    old_address: "浪江町谷津田 100-2",
-    group: "谷津田"
+      name: "田中 ミキコ",
+      password: '11111111',
+      email: "s#{i}@namie.jp",
+      zipcode: "9791751",
+      address: "福島県双葉郡浪江町谷津田宇谷津田 88",
+      old_address: "浪江町谷津田 100-2",
+      group: "谷津田"
     )
   end
 
