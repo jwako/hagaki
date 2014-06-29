@@ -20744,3 +20744,66 @@ Processing by GuidesController#show as HTML
   [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
   Rendered guides/show.html.erb within layouts/top (0.1ms)
 Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 14:40:41 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.3ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 14:41:05 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.0ms)
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 14:41:16 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.0ms)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 14:41:22 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.0ms)
+Completed 200 OK in 133ms (Views: 131.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 14:42:50 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.4ms)
+Completed 200 OK in 125ms (Views: 122.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 14:42:55 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.1ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 14:43:11 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.1ms)
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 14:43:48 +0900
+Processing by GuidesController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered guides/show.html.erb within layouts/top (0.1ms)
+Completed 200 OK in 37ms (Views: 34.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2014-06-29 14:45:24 +0900
+Processing by GuidesController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered guides/show.html.erb within layouts/top (0.3ms)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.4ms)

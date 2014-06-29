@@ -23,9 +23,13 @@
 	margin: 0 auto;
 }
 
-/*.component {
-	height: 1692px;
-}*/
+.font-big {
+	font-size: 24px;
+}
+
+.table td.v {
+	vertical-align: middle;
+}
 
 #guide1 {
 	background: url("guide1.png");
@@ -34,13 +38,14 @@
   -o-background-size: cover;
   background-size: cover;
 }
+
 #guide1 .button {
 	background: url("guide1_btn1_hover_Y1030.png") no-repeat;
 	margin-top: 1030px;
 	margin-left: 130px;
 }
 #guide1 .button a {
-	width: 940px;
+	/*width: 940px;*/
 	display: block;
 	background: url("guide1_btn1_Y1030.png") no-repeat;
 	text-align: left;
@@ -52,13 +57,5 @@
 }
 #guide1 .button a:hover {
 	background: none;
-}
-
-.font-big {
-	font-size: 24px;
-}
-
-.table td.v {
-	vertical-align: middle;
 }
 
