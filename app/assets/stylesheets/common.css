@@ -24,7 +24,7 @@
 }
 
 .component {
-	height: 1920px;
+	height: 1692px;
 }
 #guide1 {
 	background: url("guide1.png");
@@ -36,7 +36,7 @@
 #guide1 .button {
 	background: url("guide1_btn1_hover_Y1030.png") no-repeat;
 	margin-top: 1030px;
-	margin-left: 300px;
+	margin-left: 130px;
 }
 #guide1 .button a {
 	width: 940px;
